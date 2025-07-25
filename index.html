@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Akash's Portfolio</title>
+
+  <!-- FontAwesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <!-- Link to your CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="splash"><h1>Welcome, to My Portfolio!</h1></div>
+  <header>
+    <h2>Akash</h2>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#certificates">Certificates</a>
+      <a href="#content">Content</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="about" class="hero" data-aos="fade-up">
+    <img src="assets/profile.jpeg" alt="Akash" />
+    <h1>Hey, I'm Akash</h1>
+    <p>A passionate developer ready to innovate and inspire.</p>
+    <button class="resume-btn" onclick="window.open('resume.pdf')">
+      Download Resume
+    </button>
+  </section>
+
+  <section id="skills" data-aos="fade-up">
+    <h2>Skills</h2>
+    <div class="glass-card">
+      <ul class="skill-list">
+        <li>Java</li>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="projects" data-aos="fade-up">
+    <h2>Projects</h2>
+    <div
+      class="glass-card project"
+      onclick="showPopup('Hot Water Treatment System', 'Created a temperature-controlled water heating system that maintains water at 52°C for 30 minutes using a relay-controlled heater and a temperature sensor. The system alerts with a buzzer and shuts off the heater automatically after the set time.', 'assets/project1.jpeg')"
+    >
+      <h3>Automatic Hot Water Treatment System for Banana Suckers</h3>
+    </div>
+    <div
+      class="glass-card project"
+      onclick="showPopup('Real-Time Self-Healing Network', 'Developed a smart network system that uses XGBoost to detect and resolve problems before they cause downtime. It boosts security and ensures stable performance for vital services like healthcare and cloud platforms.', 'assets/project2.PNG')"
+    >
+      <h3>Real-Time Self-Healing Network System</h3>
+    </div>
+  </section>
+
+  <section id="certificates" data-aos="fade-up">
+    <h2>Certificates</h2>
+    <div class="glass-card certificates">
+      <img
+      src="certificates/aws.jpeg"
+      alt="Certificate 1"
+      data-title="AWS Certificate"
+      onclick="showCertificatePopup(this)"
+    />
+      <img
+      src="certificates/nptel.jpeg"
+      alt="Certificate 2"
+      data-title="NPTEL Certificate"
+      onclick="showCertificatePopup(this)"
+    />
+      <img
+      src="certificates/presentation1.jpeg"
+      alt="Certificate 3"
+      data-title="Presentation Certificate"
+      onclick="showCertificatePopup(this)"
+    />
+      <img
+      src="certificates/python.jpeg"
+      alt="Certificate 4"
+      data-title="Python Certificate"
+      onclick="showCertificatePopup(this)"
+    />
+      <img
+      src="certificates/workshop.jpeg"
+      alt="Certificate 5"
+      data-title="Workshop Certificate"
+      onclick="showCertificatePopup(this)"
+    />
+      <img
+      src="certificates/presentation2.jpeg"
+      alt="Certificate 6"
+      data-title="Presentation Certificate"
+      onclick="showCertificatePopup(this)"
+    />
+      <img
+      src="certificates/valuaddedcourse.jpeg"
+      alt="Certificate 7"
+      data-title="ValueAddedCourse Certificate"
+      onclick="showCertificatePopup(this)"
+    />
+    </div>
+  </section>
+
+  <section id="content" data-aos="fade-up">
+  <h2>Industry Exposure</h2>
+  <div class="glass-card project" onclick="showPopup('Internship: Ilife Tech', 'Completed a 15-day Python Fullstack Development internship at iLife Technologies, Trichy. Gained hands-on experience in web development using Python, front-end design, and backend integration. Strengthened my coding skills and understanding of real-world software development.', 'assets/internship.jpg')"> 
+    <h3>Internship: Ilife Technology</h3>
+    <p>Python Fullstack Development internship at iLife Technologies.</p>
+  </div>
+  <div class="glass-card project" onclick="showPopup('ISRO – Mahendragiri', 'During my 2nd year of engineering, I had the opportunity to visit the ISRO Propulsion Complex, Mahendragiri. It was an exciting experience to explore India’s space technology environment and witness where rocket engines are tested. A truly inspiring visit that sparked curiosity beyond the classroom!', 'assets/iv1.jpeg')">
+    <h3>ISRO - Industrial Visit</h3>
+    <p>Visited ISRO facilities to explore satellite technology.</p>
+  </div>
+  <div class="glass-card project" onclick="showPopup('Kudankulam Nuclear Power Plant', 'In my 3rd year of engineering, I visited the Kudankulam Nuclear Power Plant (KKNPP) as part of an industrial tour. It was a unique experience to see one of India’s largest nuclear energy facilities and understand the scale of power generation. A powerful insight into how technology drives energy!', 'assets/iv2.jpeg')">
+    <h3>Nuclear Power Plant - Industrial Visit</h3>
+    <p>Experienced the workings of a Nuclear Power Plant.</p>
+  </div>
+</section>
+
+
+  <section id="contact" data-aos="fade-up">
+    <h2>Contact</h2>
+    <div class="glass-card social-icons">
+      <a 
+        href="https://mail.google.com/mail/?view=cm&fs=1&to=akashsanmugam79@gmail.com" 
+        target="_blank" 
+        rel="noopener noreferrer">
+        <i class="fas fa-envelope"></i
+      ></a>
+      <a
+        href="https://www.linkedin.com/in/akash-s-5a63712b5?"
+        target="_blank"
+        rel="noopener noreferrer"
+        ><i class="fab fa-linkedin"></i
+      ></a>
+      <a
+        href="https://github.com/Akash-9-7"
+        target="_blank"
+        rel="noopener noreferrer"
+        ><i class="fab fa-github"></i
+      ></a>
+      <a
+        href="https://www.instagram.com/____mr_hell____?igsh=dGZ3ZWJmb3Jod3E3"
+        target="_blank"
+        rel="noopener noreferrer"
+        ><i class="fab fa-instagram"></i
+      ></a>
+    </div>
+  </section>
+
+  <!-- Popup Container -->
+  <div id="popup" class="popup hidden">
+    <span class="close-btn" onclick="closePopup()">&times;</span>
+    <div class="popup-content">
+      <h2 id="popup-title"></h2>
+      <p id="popup-desc"></p>
+      <img id="popup-img" src="" alt="Project Image" />
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

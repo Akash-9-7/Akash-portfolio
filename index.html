@@ -17,7 +17,11 @@
 </head>
 <body>
   <!-- Splash Screen -->
-  <div class="splash"><h1>Welcome, to My Portfolio!</h1></div>
+  <div class="splash">
+    <h1>
+        <span id="splash-text">AKASH</span><span class="cursor">|</span>
+    </h1>
+</div>
 
   <header>
     <h2>Akash</h2>
@@ -32,14 +36,19 @@
   </header>
 
   <section id="about" class="hero" data-aos="fade-up">
-    <img
-      src="assets/profile.jpeg"
-      alt="Akash"
-      onclick="showProfilePopup()"
-      style="cursor:pointer;"
-    />
+      <img
+        src="assets/profile.jpg"
+        alt="Akash"
+      />
     <h1>Hey, I'm Akash</h1>
-    <p>A passionate developer ready to innovate and inspire.</p>
+
+        <p class="hero-role">
+          ECE Graduate • Full Stack Developer • Problem Solver
+        </p>
+        <p>
+          A passionate developer ready to innovate and inspire.
+        </p>
+
     <button class="resume-btn" onclick="window.open('assets/portfolio_cv.pdf')">
       Download Resume
     </button>
@@ -49,7 +58,8 @@
     <h2>Skills</h2>
     <div class="glass-card">
       <ul class="skill-list">
-         <li class="skill-item" style="opacity: 1;">C</li>
+        <li class="skill-item" style="opacity: 1;">C</li>
+        <li class="skill-item" style="opacity: 1;">PYTHON</li>
         <li class="skill-item" style="opacity: 1;">Java</li>
         <li class="skill-item" style="opacity: 1;">HTML</li>
         <li class="skill-item" style="opacity: 1;">CSS</li>
@@ -71,6 +81,12 @@
       onclick="showPopup('Real-Time Self-Healing Network', 'Developed a smart network system that uses XGBoost to detect and resolve problems before they cause downtime. It boosts security and ensures stable performance for vital services like healthcare and cloud platforms.', 'assets/project2.PNG')"
     >
       <h3>Real-Time Self-Healing Network System</h3>
+    </div>
+    <div
+      class="glass-card project"
+      onclick="showPopup('Robotic Vehicle', 'This project develops a smart robotic vehicle for border surveillance and hazardous areas. It enables remote monitoring using IoT, sensors and a camera to improve safety and reduce human intervention', 'assets/project3.jpg')"
+    >
+      <h3>Robotic Vehicle for Surveillance and Hazardous Zone Operations </h3>
     </div>
   </section>
 
@@ -102,7 +118,7 @@
         onclick="showCertificatePopup(this)"
       />
       <img
-        src="certificates/workshop.jpeg"
+        src="certificates/workshop1.jpeg"
         alt="Certificate 5"
         data-title="Workshop Certificate"
         onclick="showCertificatePopup(this)"
@@ -116,6 +132,48 @@
       <img
         src="certificates/valuaddedcourse.jpeg"
         alt="Certificate 7"
+        data-title="ValueAddedCourse Certificate"
+        onclick="showCertificatePopup(this)"
+      />
+      <img
+        src="certificates/aurdino.png"
+        alt="Certificate 8"
+        data-title="ValueAddedCourse Certificate"
+        onclick="showCertificatePopup(this)"
+      />
+      <img
+        src="certificates/c.png"
+        alt="Certificate 9"
+        data-title="ValueAddedCourse Certificate"
+        onclick="showCertificatePopup(this)"
+      />
+      <img
+        src="certificates/computers.png"
+        alt="Certificate 10"
+        data-title="ValueAddedCourse Certificate"
+        onclick="showCertificatePopup(this)"
+      />
+      <img
+        src="certificates/java.png"
+        alt="Certificate 11"
+        data-title="ValueAddedCourse Certificate"
+        onclick="showCertificatePopup(this)"
+      />
+      <img
+        src="certificates/html.png"
+        alt="Certificate 12"
+        data-title="ValueAddedCourse Certificate"
+        onclick="showCertificatePopup(this)"
+      />
+      <img
+        src="certificates/conference.png"
+        alt="Certificate 13"
+        data-title="ValueAddedCourse Certificate"
+        onclick="showCertificatePopup(this)"
+      />
+      <img
+        src="certificates/workshop2.png"
+        alt="Certificate 14"
         data-title="ValueAddedCourse Certificate"
         onclick="showCertificatePopup(this)"
       />
@@ -133,7 +191,7 @@
     </div>
     <div
       class="glass-card project"
-      onclick="showPopup('ISRO – Mahendragiri', 'During my 2nd year of engineering, I had the opportunity to visit the ISRO Propulsion Complex, Mahendragiri. It was an exciting experience to explore India’s space technology environment and witness where rocket engines are tested. A truly inspiring visit that sparked curiosity beyond the classroom!', 'assets/iv1.jpeg')"
+      onclick="showPopup('ISRO – Mahendragiri', 'During my 2nd year of Engineering, I had the opportunity to visit the ISRO Propulsion Complex, Mahendragiri. It was an exciting experience to explore India’s space technology environment and witness where rocket engines are tested. A truly inspiring visit that sparked curiosity beyond the classroom!', 'assets/iv1.jpeg')"
     >
       <h3>ISRO - Industrial Visit</h3>
       <p>Visited ISRO facilities to explore satellite technology.</p>
@@ -147,39 +205,75 @@
     </div>
   </section>
 
-  <section id="contact" data-aos="fade-up">
-    <h2>Contact</h2>
-    <div class="glass-card social-icons">
-      <a
-        href="https://mail.google.com/mail/?view=cm&fs=1&to=akashsanmugam79@gmail.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        title="Email"
-        ><i class="fas fa-envelope"></i
-      ></a>
-      <a
-        href="https://www.linkedin.com/in/akash-s-5a63712b5?"
-        target="_blank"
-        rel="noopener noreferrer"
-        title="LinkedIn Profile"
-        ><i class="fab fa-linkedin"></i
-      ></a>
-      <a
-        href="https://github.com/Akash-9-7"
-        target="_blank"
-        rel="noopener noreferrer"
-        title="GitHub Profile"
-        ><i class="fab fa-github"></i
-      ></a>
-      <a
-        href="https://www.instagram.com/____mr_hell____?igsh=dGZ3ZWJmb3Jod3E3"
-        target="_blank"
-        rel="noopener noreferrer"
-        title="Instagram"
-        ><i class="fab fa-instagram"></i
-      ></a>
-    </div>
-  </section>
+  <section id="contact" class="contact-section" data-aos="fade-up">
+
+    <h2>Let's Start Work Together</h2>
+
+      <div class="contact-container">
+
+        <div class="contact-left">
+            <h1>Get in Touch</h1>
+                <p>Interested in working together or discussing a project?<br>
+                Feel free to contact me anytime.</p>
+
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=akashsanmugam79@gmail.com"
+            target="_blank" class="contact-btn">Get In Touch</a>
+        </div>
+
+        <div class="contact-right">
+            <div class="info">
+              <h4>Email</h4>
+              <p>akashsanmugam79@gmail.com</p>
+            </div>
+
+          <div class="info">
+            <h4>Location</h4>
+            <p>Tamil Nadu, India</p>
+          </div>
+
+          <div class="info">
+            <h4>Availability</h4>
+            <p>Open for Internship & Full-Time</p>
+          </div>
+
+          <div class="info">
+            <h4>Socials</h4>
+
+            <div class="social-icons">
+
+                <a href="https://github.com/Akash-9-7"><i class="fab fa-github"></i></a>
+
+                <a href="https://www.linkedin.com/in/akash-s-5a63712b5"><i class="fab fa-linkedin"></i></a>
+
+                <a href="https://wa.me/917558107494?text=Hi%20Akash,%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20connect." target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+<footer class="footer">
+
+    <p class="footer-title">
+        Thanks for Visiting 👋
+    </p>
+
+    <p class="footer-subtitle">
+        Let's Build Something Amazing Together.
+    </p>
+
+    <p class="footer-copy">
+        © 2026 Akash | Built with HTML • CSS • JavaScript
+    </p>
+
+</footer>
+
+</section>
 
   <!-- Back to Top Button -->
   <button id="back-to-top" aria-label="Back to top">
@@ -187,7 +281,7 @@
   </button>
 
   <!-- Popup Container -->
-  <div id="popup" class="popup hidden" ...>
+  <div id="popup" class="popup hidden">
   <div class="popup-content">
     <button class="close-btn" onclick="closePopup()" aria-label="Close popup">
       &times;

@@ -3,23 +3,50 @@ AOS.init();
 
 // Splash screen (fade out once per session)
 const splash = document.querySelector('.splash');
+const splashText = document.getElementById("splash-text");
 
 window.addEventListener('load', () => {
-  if (!sessionStorage.getItem('splashShown')) {
-    // Trigger fade out after a tiny delay to enable transition
-    setTimeout(() => {
-      splash.classList.add('active'); // active sets opacity to 0
-    }, 100);
 
-    // After fade-out transition, hide splash and mark as shown
+  if (!sessionStorage.getItem('splashShown')) {
+
+    const name = "AKASH";
+    let index = name.length;
+
+    // Start deleting after 0.5 sec
     setTimeout(() => {
-      splash.style.display = 'none';
-      sessionStorage.setItem('splashShown', 'true');
-    }, 700); // 500ms transition + 200ms buffer
+
+      const erase = setInterval(() => {
+
+        index--;
+
+        splashText.textContent = name.substring(0, index);
+
+        if(index <= 0){
+
+          clearInterval(erase);
+
+          splash.classList.add("active");
+
+          setTimeout(() => {
+
+            splash.style.display = "none";
+
+            sessionStorage.setItem("splashShown","true");
+
+          },500);
+
+        }
+
+      },120);
+
+    },500);
+
   } else {
-    // If already shown, hide splash immediately
-    splash.style.display = 'none';
+
+    splash.style.display="none";
+
   }
+
 });
 
 // Popup functionality
@@ -47,13 +74,7 @@ function showCertificatePopup(imgElement) {
   openPopup();
 }
 
-function showProfilePopup() {
-  popupTitle.textContent = "Akash";
-  popupDesc.textContent = "";
-  popupImg.src = "assets/profile.jpeg";
-  popupImg.alt = "Profile Image";
-  openPopup();
-}
+
 
 function openPopup() {
   popup.classList.remove('hidden');
@@ -103,7 +124,7 @@ window.addEventListener('scroll', () => {
 });
 
 // Tooltip on social icons hover
-const socialIcons = document.querySelectorAll('.social-icons a');
+const socialIcons = document.querySelectorAll('.contact-social a');
 
 socialIcons.forEach(icon => {
   const tooltipText = {

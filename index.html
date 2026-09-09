@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>Akash's Portfolio</title>
 
   <!-- FontAwesome -->
@@ -10,21 +11,41 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
   />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
-  <!-- Link to your CSS -->
+  <!-- AOS Animation -->
+  <link
+    href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+    rel="stylesheet"
+  />
+
+  <!-- Main CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-  <!-- Splash Screen -->
+
+  <!-- ================= SPLASH SCREEN ================= -->
+
   <div class="splash">
-    <h1>
-        <span id="splash-text">AKASH</span><span class="cursor">|</span>
-    </h1>
-</div>
+    <div class="loader-container">
+
+      <h1>AKASH</h1>
+
+      <div class="progress-bar">
+        <div class="progress-fill"></div>
+      </div>
+
+      <span id="loading-percentage">0%</span>
+
+    </div>
+  </div>
+
+
+  <!-- ================= HEADER ================= -->
 
   <header>
     <h2>Akash</h2>
+
     <nav>
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
@@ -35,221 +56,580 @@
     </nav>
   </header>
 
+
+  <!-- ================= ABOUT ================= -->
+
   <section id="about" class="hero" data-aos="fade-up">
-      <img
-        src="assets/profile.jpg"
-        alt="Akash"
-      />
+
+    <img
+      src="assets/profile.jpg"
+      alt="Akash"
+    />
+
     <h1>Hey, I'm Akash</h1>
 
-        <p class="hero-role">
-          ECE Graduate • Full Stack Developer • Problem Solver
-        </p>
-        <p>
-          A passionate developer ready to innovate and inspire.
-        </p>
+    <p class="hero-role">
+      ECE Graduate • Full Stack Developer • Problem Solver
+    </p>
 
-    <button class="resume-btn" onclick="window.open('assets/portfolio_cv.pdf')">
+    <p>
+      A passionate developer ready to innovate and inspire.
+    </p>
+
+    <button
+      class="resume-btn"
+      onclick="window.open('assets/portfolio_cv.pdf')"
+    >
       Download Resume
     </button>
+
   </section>
+
+
+  <!-- ================= SKILLS ================= -->
 
   <section id="skills" data-aos="fade-up">
+
     <h2>Skills</h2>
+
     <div class="glass-card">
+
       <ul class="skill-list">
-        <li class="skill-item" style="opacity: 1;">C</li>
-        <li class="skill-item" style="opacity: 1;">Python</li>
-        <li class="skill-item" style="opacity: 1;">Java</li>
-        <li class="skill-item" style="opacity: 1;">HTML</li>
-        <li class="skill-item" style="opacity: 1;">CSS</li>
-        <li class="skill-item" style="opacity: 1;">JavaScript</li>
+
+        <li class="skill-item">C</li>
+        <li class="skill-item">Python</li>
+        <li class="skill-item">Java</li>
+        <li class="skill-item">HTML</li>
+        <li class="skill-item">CSS</li>
+        <li class="skill-item">JavaScript</li>
+
       </ul>
+
     </div>
+
   </section>
+
+
+  <!-- ================= PROJECTS ================= -->
 
   <section id="projects" data-aos="fade-up">
+
     <h2>Projects</h2>
-    <div
-      class="glass-card project"
-      onclick="showPopup('Hot Water Treatment System', 'Created a temperature-controlled water heating system that maintains water at 52°C for 30 minutes using a relay-controlled heater and a temperature sensor. The system alerts with a buzzer and shuts off the heater automatically after the set time.', 'assets/project1.jpeg')"
-    >
-      <h3>Automatic Hot Water Treatment System for Banana Suckers</h3>
-    </div>
-    <div
-      class="glass-card project"
-      onclick="showPopup('Real-Time Self-Healing Network', 'Developed a smart network system that uses XGBoost to detect and resolve problems before they cause downtime. It boosts security and ensures stable performance for vital services like healthcare and cloud platforms.', 'assets/project2.PNG')"
-    >
-      <h3>Real-Time Self-Healing Network System</h3>
-    </div>
-    <div
-      class="glass-card project"
-      onclick="showPopup('Robotic Vehicle', 'This project develops a smart robotic vehicle for border surveillance and hazardous areas. It enables remote monitoring using IoT, sensors and a camera to improve safety and reduce human intervention', 'assets/project3.jpg')"
-    >
-      <h3>Robotic Vehicle for Surveillance and Hazardous Zone Operations </h3>
-    </div>
+
+<!-- PROJECT 1 -->
+<div
+  class="glass-card project"
+  onclick="showPopup(
+    'Hot Water Treatment System',
+    'Created a temperature-controlled water heating system that maintains water at 52°C for 30 minutes using a relay-controlled heater and a temperature sensor. The system alerts with a buzzer and shuts off the heater automatically after the set time.',
+    'assets/project1.jpeg'
+  )"
+>
+  <div class="project-view">
+    <h3>Automatic Hot Water Treatment System for Banana Suckers</h3>
+    <span>VIEW</span>
+  </div>
+</div>
+
+
+<!-- PROJECT 2 -->
+<div
+  class="glass-card project"
+  onclick="showPopup(
+    'Real-Time Self-Healing Network',
+    'Developed a smart network system that uses XGBoost to detect and resolve problems before they cause downtime. It boosts security and ensures stable performance for vital services like healthcare and cloud platforms.',
+    'assets/project2.PNG'
+  )"
+>
+  <div class="project-view">
+    <h3>Real-Time Self-Healing Network System</h3>
+    <span>VIEW</span>
+  </div>
+</div>
+
+
+<!-- PROJECT 3 -->
+<div
+  class="glass-card project"
+  onclick="showPopup(
+    'Robotic Vehicle',
+    'This project develops a smart robotic vehicle for border surveillance and hazardous areas. It enables remote monitoring using IoT, sensors and a camera to improve safety and reduce human intervention.',
+    'assets/project3.jpg'
+  )"
+>
+  <div class="project-view">
+    <h3>Robotic Vehicle for Surveillance and Hazardous Zone Operations</h3>
+    <span>VIEW</span>
+  </div>
+</div>
+    
+    
+
   </section>
+
+
+  <!-- ================= CERTIFICATES ================= -->
 
   <section id="certificates" data-aos="fade-up">
+
     <h2>Certificates</h2>
+
     <div class="glass-card certificates">
-      <img
-        src="certificates/aws.jpeg"
-        alt="Certificate 1"
-        data-title="AWS Certificate"
-        onclick="showCertificatePopup(this)"
-      />
-      <img
-        src="certificates/nptel.jpeg"
-        alt="Certificate 2"
-        data-title="NPTEL Certificate"
-        onclick="showCertificatePopup(this)"
-      />
-      <img
-        src="certificates/presentation1.jpeg"
-        alt="Certificate 3"
-        data-title="Presentation Certificate"
-        onclick="showCertificatePopup(this)"
-      />
-      <img
-        src="certificates/python.jpeg"
-        alt="Certificate 4"
-        data-title="Python Certificate"
-        onclick="showCertificatePopup(this)"
-      />
-      <img
-        src="certificates/workshop1.jpeg"
-        alt="Certificate 5"
-        data-title="Workshop Certificate"
-        onclick="showCertificatePopup(this)"
-      />
-      <img
-        src="certificates/presentation2.jpeg"
-        alt="Certificate 6"
-        data-title="Presentation Certificate"
-        onclick="showCertificatePopup(this)"
-      />
-      <img
-        src="certificates/valuaddedcourse.jpeg"
-        alt="Certificate 7"
-        data-title="ValueAddedCourse Certificate"
-        onclick="showCertificatePopup(this)"
-      />
-      <img
-        src="certificates/aurdino.png"
-        alt="Certificate 8"
-        data-title="Aurdino Certificate"
-        onclick="showCertificatePopup(this)"
-      />
-      <img
-        src="certificates/c.png"
-        alt="Certificate 9"
-        data-title="C Certificate"
-        onclick="showCertificatePopup(this)"
-      />
-      <img
-        src="certificates/computers.png"
-        alt="Certificate 10"
-        data-title="Introduction to computers Certificate"
-        onclick="showCertificatePopup(this)"
-      />
-      <img
-        src="certificates/java.png"
-        alt="Certificate 11"
-        data-title="Java Certificate"
-        onclick="showCertificatePopup(this)"
-      />
-      <img
-        src="certificates/html.png"
-        alt="Certificate 12"
-        data-title="HTML Certificate"
-        onclick="showCertificatePopup(this)"
-      />
-      <img
-        src="certificates/conference.png"
-        alt="Certificate 13"
-        data-title="Conference Certificate"
-        onclick="showCertificatePopup(this)"
-      />
-      <img
-        src="certificates/workshop2.png"
-        alt="Certificate 14"
-        data-title="End to End Web development Certificate"
-        onclick="showCertificatePopup(this)"
-      />
+
+
+      <!-- Certificate 1 -->
+
+      <div class="certificate-item">
+
+        <img
+          src="certificates/aws.jpeg"
+          alt="AWS Certificate"
+          data-title="AWS Certificate"
+          onclick="showCertificatePopup(this)"
+        />
+
+        <div
+          class="certificate-overlay"
+          onclick="showCertificatePopup(this.previousElementSibling)"
+        >
+          <span>VIEW</span>
+        </div>
+
+      </div>
+
+
+      <!-- Certificate 2 -->
+
+      <div class="certificate-item">
+
+        <img
+          src="certificates/nptel.jpeg"
+          alt="NPTEL Certificate"
+          data-title="NPTEL Certificate"
+          onclick="showCertificatePopup(this)"
+        />
+
+        <div
+          class="certificate-overlay"
+          onclick="showCertificatePopup(this.previousElementSibling)"
+        >
+          <span>VIEW</span>
+        </div>
+
+      </div>
+
+
+      <!-- Certificate 3 -->
+
+      <div class="certificate-item">
+
+        <img
+          src="certificates/presentation1.jpeg"
+          alt="Presentation Certificate"
+          data-title="Presentation Certificate"
+          onclick="showCertificatePopup(this)"
+        />
+
+        <div
+          class="certificate-overlay"
+          onclick="showCertificatePopup(this.previousElementSibling)"
+        >
+          <span>VIEW</span>
+        </div>
+
+      </div>
+
+
+      <!-- Certificate 4 -->
+
+      <div class="certificate-item">
+
+        <img
+          src="certificates/python.jpeg"
+          alt="Python Certificate"
+          data-title="Python Certificate"
+          onclick="showCertificatePopup(this)"
+        />
+
+        <div
+          class="certificate-overlay"
+          onclick="showCertificatePopup(this.previousElementSibling)"
+        >
+          <span>VIEW</span>
+        </div>
+
+      </div>
+
+
+      <!-- Certificate 5 -->
+
+      <div class="certificate-item">
+
+        <img
+          src="certificates/workshop1.jpeg"
+          alt="Workshop Certificate"
+          data-title="Workshop Certificate"
+          onclick="showCertificatePopup(this)"
+        />
+
+        <div
+          class="certificate-overlay"
+          onclick="showCertificatePopup(this.previousElementSibling)"
+        >
+          <span>VIEW</span>
+        </div>
+
+      </div>
+
+
+      <!-- Certificate 6 -->
+
+      <div class="certificate-item">
+
+        <img
+          src="certificates/presentation2.jpeg"
+          alt="Presentation Certificate"
+          data-title="Presentation Certificate"
+          onclick="showCertificatePopup(this)"
+        />
+
+        <div
+          class="certificate-overlay"
+          onclick="showCertificatePopup(this.previousElementSibling)"
+        >
+          <span>VIEW</span>
+        </div>
+
+      </div>
+
+
+      <!-- Certificate 7 -->
+
+      <div class="certificate-item">
+
+        <img
+          src="certificates/valuaddedcourse.jpeg"
+          alt="Value Added Course Certificate"
+          data-title="Value Added Course Certificate"
+          onclick="showCertificatePopup(this)"
+        />
+
+        <div
+          class="certificate-overlay"
+          onclick="showCertificatePopup(this.previousElementSibling)"
+        >
+          <span>VIEW</span>
+        </div>
+
+      </div>
+
+
+      <!-- Certificate 8 -->
+
+      <div class="certificate-item">
+
+        <img
+          src="certificates/aurdino.png"
+          alt="Arduino Certificate"
+          data-title="Arduino Certificate"
+          onclick="showCertificatePopup(this)"
+        />
+
+        <div
+          class="certificate-overlay"
+          onclick="showCertificatePopup(this.previousElementSibling)"
+        >
+          <span>VIEW</span>
+        </div>
+
+      </div>
+
+
+      <!-- Certificate 9 -->
+
+      <div class="certificate-item">
+
+        <img
+          src="certificates/c.png"
+          alt="C Certificate"
+          data-title="C Certificate"
+          onclick="showCertificatePopup(this)"
+        />
+
+        <div
+          class="certificate-overlay"
+          onclick="showCertificatePopup(this.previousElementSibling)"
+        >
+          <span>VIEW</span>
+        </div>
+
+      </div>
+
+
+      <!-- Certificate 10 -->
+
+      <div class="certificate-item">
+
+        <img
+          src="certificates/computers.png"
+          alt="Introduction to Computers Certificate"
+          data-title="Introduction to Computers Certificate"
+          onclick="showCertificatePopup(this)"
+        />
+
+        <div
+          class="certificate-overlay"
+          onclick="showCertificatePopup(this.previousElementSibling)"
+        >
+          <span>VIEW</span>
+        </div>
+
+      </div>
+
+
+      <!-- Certificate 11 -->
+
+      <div class="certificate-item">
+
+        <img
+          src="certificates/java.png"
+          alt="Java Certificate"
+          data-title="Java Certificate"
+          onclick="showCertificatePopup(this)"
+        />
+
+        <div
+          class="certificate-overlay"
+          onclick="showCertificatePopup(this.previousElementSibling)"
+        >
+          <span>VIEW</span>
+        </div>
+
+      </div>
+
+
+      <!-- Certificate 12 -->
+
+      <div class="certificate-item">
+
+        <img
+          src="certificates/html.png"
+          alt="HTML Certificate"
+          data-title="HTML Certificate"
+          onclick="showCertificatePopup(this)"
+        />
+
+        <div
+          class="certificate-overlay"
+          onclick="showCertificatePopup(this.previousElementSibling)"
+        >
+          <span>VIEW</span>
+        </div>
+
+      </div>
+
+
+      <!-- Certificate 13 -->
+
+      <div class="certificate-item">
+
+        <img
+          src="certificates/conference.png"
+          alt="Conference Certificate"
+          data-title="Conference Certificate"
+          onclick="showCertificatePopup(this)"
+        />
+
+        <div
+          class="certificate-overlay"
+          onclick="showCertificatePopup(this.previousElementSibling)"
+        >
+          <span>VIEW</span>
+        </div>
+
+      </div>
+
+
+      <!-- Certificate 14 -->
+
+      <div class="certificate-item">
+
+        <img
+          src="certificates/workshop2.png"
+          alt="End to End Web Development Certificate"
+          data-title="End to End Web Development Certificate"
+          onclick="showCertificatePopup(this)"
+        />
+
+        <div
+          class="certificate-overlay"
+          onclick="showCertificatePopup(this.previousElementSibling)"
+        >
+          <span>VIEW</span>
+        </div>
+
+      </div>
+
     </div>
+
   </section>
+
+
+  <!-- ================= INDUSTRY EXPOSURE ================= -->
 
   <section id="content" data-aos="fade-up">
+
     <h2>Industry Exposure</h2>
-    <div
-      class="glass-card project"
-      onclick="showPopup('Internship: Ilife Tech', 'Completed a 15-day Python Fullstack Development internship at iLife Technologies, Trichy. Gained hands-on experience in web development using Python, front-end design, and backend integration. Strengthened my coding skills and understanding of real-world software development.', 'assets/internship.jpg')"
-    >
-      <h3>Internship: Ilife Technology</h3>
-      <p>Python Fullstack Development internship at iLife Technologies.</p>
-    </div>
-    <div
-      class="glass-card project"
-      onclick="showPopup('ISRO – Mahendragiri', 'During my 2nd year of Engineering, I had the opportunity to visit the ISRO Propulsion Complex, Mahendragiri. It was an exciting experience to explore India’s space technology environment and witness where rocket engines are tested. A truly inspiring visit that sparked curiosity beyond the classroom!', 'assets/iv1.jpeg')"
-    >
-      <h3>ISRO - Industrial Visit</h3>
-      <p>Visited ISRO facilities to explore satellite technology.</p>
-    </div>
-    <div
-      class="glass-card project"
-      onclick="showPopup('Kudankulam Nuclear Power Plant', 'In my 3rd year of engineering, I visited the Kudankulam Nuclear Power Plant (KKNPP) as part of an industrial tour. It was a unique experience to see one of India’s largest nuclear energy facilities and understand the scale of power generation. A powerful insight into how technology drives energy!', 'assets/iv2.jpeg')"
-    >
-      <h3>Nuclear Power Plant - Industrial Visit</h3>
-      <p>Experienced the workings of a Nuclear Power Plant.</p>
-    </div>
+
+    <!-- INTERNSHIP -->
+<div
+  class="glass-card project"
+  onclick="showPopup(
+    'Internship: Ilife Tech',
+    'Completed a 15-day Python Fullstack Development internship at iLife Technologies, Trichy. Gained hands-on experience in web development using Python, front-end design, and backend integration. Strengthened my coding skills and understanding of real-world software development.',
+    'assets/internship.jpg'
+  )"
+>
+  <div class="project-view">
+    <h3>Internship: Ilife Technology</h3>
+    <span>VIEW</span>
+  </div>
+</div>
+
+
+<!-- ISRO -->
+<div
+  class="glass-card project"
+  onclick="showPopup(
+    'ISRO – Mahendragiri',
+    'During my 2nd year of Engineering, I had the opportunity to visit the ISRO Propulsion Complex, Mahendragiri. It was an exciting experience to explore India’s space technology environment and witness where rocket engines are tested.',
+    'assets/iv1.jpeg'
+  )"
+>
+  <div class="project-view">
+    <h3>ISRO - Industrial Visit</h3>
+    <span>VIEW</span>
+  </div>
+</div>
+
+
+<!-- KUDANKULAM -->
+<div
+  class="glass-card project"
+  onclick="showPopup(
+    'Kudankulam Nuclear Power Plant',
+    'In my 3rd year of engineering, I visited the Kudankulam Nuclear Power Plant (KKNPP) as part of an industrial tour. It was a unique experience to see one of India’s largest nuclear energy facilities and understand the scale of power generation.',
+    'assets/iv2.jpeg'
+  )"
+>
+  <div class="project-view">
+    <h3>Nuclear Power Plant - Industrial Visit</h3>
+    <span>VIEW</span>
+  </div>
+</div>
+
+    
+    
+
   </section>
 
-  <section id="contact" class="contact-section" data-aos="fade-up">
+
+  <!-- ================= CONTACT ================= -->
+
+  <section
+    id="contact"
+    class="contact-section"
+    data-aos="fade-up"
+  >
 
     <h2>Let's Start Work Together</h2>
 
-      <div class="contact-container">
+    <div class="contact-container">
 
-        <div class="contact-left">
-            <h1>Get in Touch</h1>
-                <p>Interested in working together or discussing a project?<br>
-                Feel free to contact me anytime.</p>
+      <div class="contact-left">
 
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=akashsanmugam79@gmail.com"
-            target="_blank" class="contact-btn">Get In Touch</a>
+        <h1>Get in Touch</h1>
+
+        <p>
+          Interested in working together or discussing a project?<br />
+          Feel free to contact me anytime.
+        </p>
+
+        <a
+          href="https://mail.google.com/mail/?view=cm&fs=1&to=akashsanmugam79@gmail.com"
+          target="_blank"
+          class="contact-btn"
+        >
+          Get In Touch
+        </a>
+
+      </div>
+
+
+      <div class="contact-right">
+
+        <div class="info">
+
+          <h4>Email</h4>
+
+          <p>
+            akashsanmugam79@gmail.com
+          </p>
+
         </div>
 
-        <div class="contact-right">
-            <div class="info">
-              <h4>Email</h4>
-              <p>akashsanmugam79@gmail.com</p>
-            </div>
 
-          <div class="info">
-            <h4>Location</h4>
-            <p>Tamil Nadu, India</p>
-          </div>
+        <div class="info">
 
-          <div class="info">
-            <h4>Availability</h4>
-            <p>Open for Internship & Full-Time</p>
-          </div>
+          <h4>Location</h4>
 
-          <div class="info">
-            <h4>Socials</h4>
+          <p>
+            Tamil Nadu, India
+          </p>
 
-            <div class="social-icons">
+        </div>
 
-                <a href="https://github.com/Akash-9-7"><i class="fab fa-github"></i></a>
 
-                <a href="https://www.linkedin.com/in/akash-s-5a63712b5"><i class="fab fa-linkedin"></i></a>
+        <div class="info">
 
-                <a href="https://wa.me/917558107494?text=Hi%20Akash,%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20connect." target="_blank">
-    <i class="fab fa-whatsapp"></i>
-</a>
+          <h4>Availability</h4>
 
-            </div>
+          <p>
+            Open for Internship & Full-Time
+          </p>
+
+        </div>
+
+
+        <div class="info">
+
+          <h4>Socials</h4>
+
+          <div class="social-icons">
+
+            <a
+              href="https://github.com/Akash-9-7"
+              target="_blank"
+              aria-label="GitHub"
+            >
+              <i class="fab fa-github"></i>
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/akash-s-5a63712b5"
+              target="_blank"
+              aria-label="LinkedIn"
+            >
+              <i class="fab fa-linkedin"></i>
+            </a>
+
+            <a
+              href="https://wa.me/917558107494?text=Hi%20Akash,%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20connect."
+              target="_blank"
+              aria-label="WhatsApp"
+            >
+              <i class="fab fa-whatsapp"></i>
+            </a>
 
           </div>
 
@@ -257,44 +637,77 @@
 
       </div>
 
-<footer class="footer">
+    </div>
 
-    <p class="footer-title">
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+      <p class="footer-title">
         Thanks for Visiting 👋
-    </p>
+      </p>
 
-    <p class="footer-subtitle">
+      <p class="footer-subtitle">
         Let's Build Something Amazing Together.
-    </p>
+      </p>
 
-    <p class="footer-copy">
+      <p class="footer-copy">
         © 2026 Akash | Built with HTML • CSS • JavaScript
-    </p>
+      </p>
 
-</footer>
+    </footer>
 
-</section>
+  </section>
 
-  <!-- Back to Top Button -->
-  <button id="back-to-top" aria-label="Back to top">
+
+  <!-- ================= BACK TO TOP ================= -->
+
+  <button
+    id="back-to-top"
+    aria-label="Back to top"
+  >
     <i class="fas fa-arrow-up"></i>
   </button>
 
-  <!-- Popup Container -->
-  <div id="popup" class="popup hidden">
-  <div class="popup-content">
-    <button class="close-btn" onclick="closePopup()" aria-label="Close popup">
-      &times;
-    </button>
-    <h2 id="popup-title"></h2>
-    <p id="popup-desc"></p>
-    <img id="popup-img" src="" alt="Popup image" />
+
+  <!-- ================= POPUP ================= -->
+
+  <div
+    id="popup"
+    class="popup hidden"
+  >
+
+    <div class="popup-content">
+
+      <button
+        class="close-btn"
+        onclick="closePopup()"
+        aria-label="Close popup"
+      >
+        &times;
+      </button>
+
+      <h2 id="popup-title"></h2>
+
+      <p id="popup-desc"></p>
+
+      <img
+        id="popup-img"
+        src=""
+        alt="Popup image"
+      />
+
+    </div>
+
   </div>
-</div>
 
 
-  <!-- Scripts -->
+  <!-- ================= SCRIPTS ================= -->
+
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
   <script src="script.js"></script>
+
 </body>
 </html>

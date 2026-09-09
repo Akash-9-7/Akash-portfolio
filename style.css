@@ -1047,548 +1047,1473 @@ section > h2 {
   }
 
 }
-/* =========================================
-   VERTICAL SKILL PATH
-   ========================================= */
+/* =========================
+   FLIP SKILL CARDS
+========================= */
 
-.skill-path {
-  position: relative;
+.skills-section {
+  padding: 80px 8%;
+}
 
-  width: 100%;
-  max-width: 900px;
+.skills-section .section-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
 
-  margin: 50px auto 0;
+.skills-section .section-title h2 {
+  color: #60a5fa;
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
 
-  padding: 10px 0 30px;
+.skills-section .section-title p {
+  color: #94a3b8;
+  font-size: 0.95rem;
 }
 
 
-/* =========================================
-   MAIN TIMELINE
-   ========================================= */
+/* Skills Grid */
 
-.skill-path::before {
-  content: "";
-
-  position: absolute;
-
-  left: 50%;
-  top: 0;
-  bottom: 0;
-
-  width: 2px;
-
-  transform: translateX(-50%);
-
-  background:
-    linear-gradient(
-      to bottom,
-      transparent,
-      rgba(56, 189, 248, 0.35) 8%,
-      rgba(56, 189, 248, 0.35) 92%,
-      transparent
-    );
-
-  box-shadow:
-    0 0 12px rgba(56, 189, 248, 0.15);
-}
-
-
-/* =========================================
-   SKILL STAGE
-   ========================================= */
-
-.skill-stage {
-  position: relative;
-
-  min-height: 190px;
-
-  margin-bottom: 45px;
+.skills-grid {
+  max-width: 950px;
+  margin: auto;
 
   display: grid;
-
-  grid-template-columns: 1fr 70px 1fr;
-
-  align-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
 }
 
 
-/* =========================================
-   NUMBER MARKER
-   ========================================= */
+/* Card */
 
-.stage-marker {
-  grid-column: 2;
+.skill-card {
+  height: 190px;
+  perspective: 1000px;
+  cursor: pointer;
+}
 
-  grid-row: 1;
+.skill-card-inner {
+  width: 100%;
+  height: 100%;
 
-  width: 48px;
-  height: 48px;
+  position: relative;
 
+  transform-style: preserve-3d;
+
+  transition: transform 0.7s ease;
+}
+
+
+/* Flip */
+
+.skill-card:hover .skill-card-inner {
+  transform: rotateY(180deg);
+}
+
+
+/* Front + Back */
+
+.skill-front,
+.skill-back {
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  backface-visibility: hidden;
+
+  border-radius: 20px;
+
+  border: 1px solid rgba(96, 165, 250, 0.18);
+
+  background: rgba(15, 23, 42, 0.65);
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 25px;
+
+  box-sizing: border-box;
+}
+
+
+/* Front */
+
+.skill-front i {
+  font-size: 3rem;
+  color: #60a5fa;
+  margin-bottom: 15px;
+
+  transition: 0.3s ease;
+}
+
+.skill-front h3 {
+  color: #e2e8f0;
+  font-size: 1.15rem;
+  margin: 0 0 6px;
+}
+
+.skill-front span {
+  color: #64748b;
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+}
+
+
+/* Back */
+
+.skill-back {
+  transform: rotateY(180deg);
+
+  background: rgba(30, 41, 59, 0.9);
+
+  border-color: rgba(56, 189, 248, 0.4);
+}
+
+.skill-back h3 {
+  color: #38bdf8;
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+}
+
+.skill-back p {
+  color: #cbd5e1;
+  font-size: 0.78rem;
+  line-height: 1.6;
+
+  max-width: 210px;
+
+  margin-bottom: 12px;
+}
+
+.skill-back span {
+  color: #60a5fa;
+
+  font-size: 0.65rem;
+
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
+}
+
+
+/* Glow on hover */
+
+.skill-card:hover .skill-front,
+.skill-card:hover .skill-back {
+  box-shadow:
+    0 0 25px rgba(56, 189, 248, 0.1);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .skills-section {
+    padding: 60px 5%;
+  }
+
+  .skills-section .section-title h2 {
+    font-size: 1.8rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .skill-card {
+    height: 170px;
+  }
+
+  .skill-front,
+  .skill-back {
+    border-radius: 16px;
+    padding: 18px;
+  }
+
+  .skill-front i {
+    font-size: 2.3rem;
+    margin-bottom: 12px;
+  }
+
+  .skill-front h3 {
+    font-size: 1rem;
+  }
+
+  .skill-back h3 {
+    font-size: 1rem;
+  }
+
+  .skill-back p {
+    font-size: 0.7rem;
+    line-height: 1.45;
+  }
+}
+
+
+/* Small phones */
+
+@media (max-width: 430px) {
+
+  .skills-grid {
+    gap: 12px;
+  }
+
+  .skill-card {
+    height: 155px;
+  }
+
+  .skill-front i {
+    font-size: 2rem;
+  }
+
+  .skill-front h3 {
+    font-size: 0.9rem;
+  }
+
+  .skill-front span {
+    font-size: 0.6rem;
+  }
+
+  .skill-back p {
+    font-size: 0.65rem;
+  }
+}/* =========================
+   TOOLS
+========================= */
+
+.tools-title {
+  text-align: center;
+  margin: 55px 0 25px;
+}
+
+.tools-title span {
+  color: #38bdf8;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+
+/* Tools Grid */
+
+.tools-grid {
+  max-width: 750px;
   margin: auto;
+
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 15px;
+}
+
+
+/* Tool */
+
+.tool-item {
+  height: 100px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  border: 1px solid rgba(96, 165, 250, 0.12);
+  border-radius: 15px;
+
+  background: rgba(15, 23, 42, 0.45);
+
+  transition: 0.3s ease;
+
+  cursor: pointer;
+}
+
+.tool-item i {
+  font-size: 1.7rem;
+  color: #60a5fa;
+
+  transition: 0.3s ease;
+}
+
+.tool-item span {
+  color: #94a3b8;
+  font-size: 0.7rem;
+  transition: 0.3s ease;
+}
+
+
+/* Hover */
+
+.tool-item:hover {
+  transform: translateY(-5px);
+
+  border-color: rgba(56, 189, 248, 0.45);
+
+  background: rgba(30, 41, 59, 0.7);
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.tool-item:hover i {
+  color: #38bdf8;
+  transform: scale(1.15);
+}
+
+.tool-item:hover span {
+  color: #e2e8f0;
+}
+
+
+/* =========================
+   MOBILE TOOLS
+========================= */
+
+@media (max-width: 768px) {
+
+  .tools-title {
+    margin-top: 45px;
+  }
+
+  .tools-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .tool-item {
+    height: 90px;
+  }
+
+  .tool-item i {
+    font-size: 1.5rem;
+  }
+
+  .tool-item span {
+    font-size: 0.65rem;
+  }
+}
+
+
+@media (max-width: 430px) {
+
+  .tools-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .tool-item {
+    height: 82px;
+  }
+
+  .tool-item i {
+    font-size: 1.3rem;
+  }
+
+  .tool-item span {
+    font-size: 0.6rem;
+  }
+}
+
+/* =========================
+   SPLIT HERO SECTION
+========================= */
+
+.hero-section {
+  min-height: 88vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 80px;
+
+  padding: 70px 8%;
+
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* =========================
+   LEFT CONTENT
+========================= */
+
+.hero-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.hero-small-text {
+  color: #38bdf8;
+
+  font-size: 0.8rem;
+  font-weight: 700;
+
+  letter-spacing: 4px;
+}
+
+.hero-content h1 {
+  font-size: 4.5rem;
+
+  line-height: 1;
+
+  margin: 12px 0;
+
+  color: #e2e8f0;
+
+  letter-spacing: -2px;
+}
+
+.hero-content h2 {
+  font-size: 1.6rem;
+
+  font-weight: 500;
+
+  color: #60a5fa;
+
+  margin-bottom: 22px;
+}
+
+.hero-content p {
+  max-width: 520px;
+
+  color: #94a3b8;
+
+  font-size: 0.95rem;
+
+  line-height: 1.8;
+
+  margin-bottom: 30px;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+
+  margin-bottom: 35px;
+}
+
+.hero-btn {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 12px 22px;
+
+  border-radius: 25px;
+
+  text-decoration: none;
+
+  font-size: 0.8rem;
+  font-weight: 700;
+
+  transition: 0.3s ease;
+}
+
+.primary-btn {
+  color: #0f172a;
+
+  background: #38bdf8;
+
+  border: 1px solid #38bdf8;
+}
+
+.primary-btn:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 8px 25px rgba(56, 189, 248, 0.25);
+}
+
+.secondary-btn {
+  color: #60a5fa;
+
+  background: transparent;
+
+  border: 1px solid rgba(96, 165, 250, 0.5);
+}
+
+.secondary-btn:hover {
+  color: #e0f2fe;
+
+  border-color: #38bdf8;
+
+  transform: translateY(-3px);
+}
+
+
+/* =========================
+   SKILL TAGS
+========================= */
+
+.hero-skills {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+}
+
+.hero-skills span {
+  padding: 6px 12px;
+
+  border-radius: 15px;
+
+  border: 1px solid rgba(96, 165, 250, 0.15);
+
+  color: #64748b;
+
+  font-size: 0.65rem;
+
+  background: rgba(15, 23, 42, 0.4);
+
+  transition: 0.3s ease;
+}
+
+.hero-skills span:hover {
+  color: #38bdf8;
+
+  border-color: rgba(56, 189, 248, 0.4);
+}
+
+
+/* =========================
+   RIGHT VISUAL
+========================= */
+
+.hero-visual {
+  width: 400px;
+  height: 480px;
+
+  position: relative;
 
   display: flex;
 
   align-items: center;
   justify-content: center;
-
-  border-radius: 50%;
-
-  background: #0f172a;
-
-  border: 1px solid rgba(56, 189, 248, 0.5);
-
-  box-shadow:
-    0 0 20px rgba(56, 189, 248, 0.12);
-
-  z-index: 5;
 }
 
 
-.stage-marker::before {
+/* Profile Frame */
+
+.hero-image-frame {
+  width: 300px;
+  height: 380px;
+
+  position: relative;
+
+  border: 1px solid rgba(56, 189, 248, 0.5);
+
+  padding: 10px;
+
+  background: rgba(15, 23, 42, 0.5);
+
+  transform: rotate(3deg);
+
+  transition: 0.5s ease;
+
+  box-shadow:
+    0 0 40px rgba(56, 189, 248, 0.08);
+}
+
+.hero-image-frame::before {
   content: "";
 
   position: absolute;
 
-  width: 9px;
-  height: 9px;
+  inset: -10px;
 
-  border-radius: 50%;
+  border: 1px solid rgba(96, 165, 250, 0.12);
 
-  background: #38bdf8;
+  z-index: -1;
+
+  transform: rotate(-6deg);
+}
+
+.hero-image-frame img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  filter: saturate(0.9);
+}
+
+.hero-visual:hover .hero-image-frame {
+  transform: rotate(0deg) translateY(-5px);
 
   box-shadow:
-    0 0 14px rgba(56, 189, 248, 0.8);
+    0 0 50px rgba(56, 189, 248, 0.15);
 }
 
 
-.stage-marker span {
-  position: relative;
+/* =========================
+   FLOATING TAGS
+========================= */
 
-  color: #64748b;
+.hero-tag {
+  position: absolute;
 
-  font-size: 0.55rem;
+  padding: 8px 15px;
+
+  border: 1px solid rgba(56, 189, 248, 0.35);
+
+  border-radius: 20px;
+
+  background: rgba(15, 23, 42, 0.8);
+
+  backdrop-filter: blur(8px);
+
+  color: #60a5fa;
+
+  font-size: 0.65rem;
 
   font-weight: 700;
 
-  transform: translateY(22px);
-}
-
-
-/* =========================================
-   STAGE TITLE
-   ========================================= */
-
-.stage-title {
-  grid-row: 1;
-
-  padding: 22px;
-
-  border-left: 1px solid rgba(56, 189, 248, 0.18);
-
-  background:
-    linear-gradient(
-      90deg,
-      rgba(56, 189, 248, 0.045),
-      transparent
-    );
-}
-
-
-/* Alternate sides */
-
-.skill-stage:nth-child(odd) .stage-title {
-  grid-column: 1;
-
-  text-align: right;
-
-  border-left: none;
-
-  border-right: 1px solid rgba(56, 189, 248, 0.18);
-
-  background:
-    linear-gradient(
-      270deg,
-      rgba(56, 189, 248, 0.045),
-      transparent
-    );
-}
-
-
-.skill-stage:nth-child(even) .stage-title {
-  grid-column: 3;
-
-  text-align: left;
-}
-
-
-.stage-title small {
-  color: #475569;
-
-  font-size: 0.55rem;
-
   letter-spacing: 2px;
+
+  animation: floatTag 3s ease-in-out infinite;
+}
+
+.tag-one {
+  top: 70px;
+  left: 5px;
+}
+
+.tag-two {
+  top: 200px;
+  right: 0;
+
+  animation-delay: 1s;
+}
+
+.tag-three {
+  bottom: 90px;
+  left: 20px;
+
+  animation-delay: 2s;
+}
+
+@keyframes floatTag {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 
-.stage-title h3 {
-  margin: 6px 0 0;
+/* =========================
+   AVAILABILITY
+========================= */
+
+.availability {
+  position: absolute;
+
+  bottom: 20px;
+  right: 15px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 8px 14px;
+
+  border-radius: 20px;
+
+  background: rgba(15, 23, 42, 0.85);
+
+  border: 1px solid rgba(96, 165, 250, 0.15);
 
   color: #94a3b8;
 
-  font-size: 0.9rem;
+  font-size: 0.65rem;
+}
 
-  letter-spacing: 1.5px;
+.status-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+
+  box-shadow:
+    0 0 10px rgba(34, 197, 94, 0.6);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .hero-section {
+    min-height: auto;
+
+    flex-direction: column;
+
+    text-align: center;
+
+    gap: 40px;
+
+    padding: 70px 5% 60px;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+
+  .hero-content h2 {
+    font-size: 1.25rem;
+  }
+
+  .hero-content p {
+    font-size: 0.85rem;
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+
+    flex-wrap: wrap;
+  }
+
+  .hero-skills {
+    justify-content: center;
+  }
+
+  .hero-visual {
+    width: 100%;
+
+    height: 390px;
+  }
+
+  .hero-image-frame {
+    width: 240px;
+    height: 310px;
+  }
+
+  .tag-one {
+    left: 5%;
+    top: 45px;
+  }
+
+  .tag-two {
+    right: 3%;
+    top: 160px;
+  }
+
+  .tag-three {
+    left: 8%;
+    bottom: 55px;
+  }
+
+  .availability {
+    bottom: 5px;
+    right: 50%;
+
+    transform: translateX(50%);
+    white-space: nowrap;
+  }
+}
+
+/* =========================
+   CREATIVE HERO
+   BUILD • BREAK • SOLVE
+========================= */
+
+.creative-hero {
+  min-height: 88vh;
+
+  padding: 70px 9%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+
+/* =========================
+   LEFT WORDS
+========================= */
+
+.hero-main {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 2px;
+
+  z-index: 2;
+}
+
+.hero-word {
+  position: relative;
+
+  font-size: clamp(4rem, 8vw, 7.5rem);
+
+  font-weight: 800;
+
+  line-height: 0.95;
+
+  letter-spacing: -4px;
+
+  color: #e2e8f0;
+
+  transition: 0.4s ease;
+}
+
+.hero-word span {
+  display: inline-block;
+
+  width: 38px;
+
+  vertical-align: top;
+
+  margin-top: 12px;
+
+  font-size: 0.65rem;
+
+  font-weight: 600;
+
+  letter-spacing: 1px;
+
+  color: #475569;
+}
+
+
+/* Break */
+
+.break-word {
+  color: #64748b;
+
+  transform: translateX(35px);
+}
+
+
+/* Solve */
+
+.solve-word {
+  color: #38bdf8;
+
+  transform: translateX(70px);
+
+  text-shadow:
+    0 0 30px rgba(56, 189, 248, 0.12);
+}
+
+
+/* Hover */
+
+.hero-main:hover .hero-word {
+  transform: translateX(0);
+}
+
+.hero-main:hover .solve-word {
+  color: #60a5fa;
+}
+
+
+/* =========================
+   RIGHT INFORMATION
+========================= */
+
+.hero-info {
+  width: 360px;
+
+  position: relative;
+
+  z-index: 3;
+}
+
+
+/* =========================
+   PHOTO
+========================= */
+
+.hero-photo {
+  width: 210px;
+  height: 260px;
+
+  margin-bottom: 25px;
+
+  position: relative;
+
+  border: 1px solid rgba(56, 189, 248, 0.5);
+
+  padding: 7px;
+
+  transform: rotate(2deg);
+
+  transition: 0.4s ease;
+}
+
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  filter: saturate(0.85);
+}
+
+.hero-photo:hover {
+  transform: rotate(0deg) translateY(-5px);
+
+  box-shadow:
+    0 0 35px rgba(56, 189, 248, 0.12);
+}
+
+
+/* Small line */
+
+.photo-line {
+  position: absolute;
+
+  width: 55px;
+  height: 1px;
+
+  background: #38bdf8;
+
+  top: -12px;
+  left: -20px;
+}
+
+
+/* =========================
+   NAME
+========================= */
+
+.hero-name span {
+  font-size: 0.7rem;
+
+  letter-spacing: 4px;
+
+  color: #38bdf8;
+
+  font-weight: 700;
+}
+
+.hero-name h1 {
+  margin: 7px 0 15px;
+
+  font-size: 1.8rem;
+
+  font-weight: 600;
+
+  color: #e2e8f0;
+}
+
+
+/* =========================
+   DESCRIPTION
+========================= */
+
+.hero-description {
+  color: #94a3b8;
+
+  font-size: 0.85rem;
+
+  line-height: 1.7;
+
+  max-width: 330px;
+
+  margin-bottom: 20px;
+}
+
+
+/* =========================
+   TECHNOLOGIES
+========================= */
+
+.hero-tech {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 7px;
+
+  margin-bottom: 25px;
+}
+
+.hero-tech span {
+  padding: 5px 10px;
+
+  border: 1px solid rgba(96, 165, 250, 0.18);
+
+  border-radius: 15px;
+
+  color: #64748b;
+
+  background: rgba(15, 23, 42, 0.4);
+
+  font-size: 0.6rem;
 
   transition: 0.3s ease;
 }
 
+.hero-tech span:hover {
+  color: #38bdf8;
 
-/* =========================================
-   SKILLS AREA
-   ========================================= */
+  border-color: #38bdf8;
+}
 
-.stage-skills {
-  grid-row: 1;
 
+/* =========================
+   ACTIONS
+========================= */
+
+.hero-actions {
   display: flex;
 
   align-items: center;
 
   gap: 18px;
-
-  padding: 20px;
 }
 
-
-/* Odd → right side */
-
-.skill-stage:nth-child(odd) .stage-skills {
-  grid-column: 3;
-
-  justify-content: flex-start;
-}
-
-
-/* Even → left side */
-
-.skill-stage:nth-child(even) .stage-skills {
-  grid-column: 1;
-
-  justify-content: flex-end;
-
-  grid-row: 1;
-}
-
-
-/* =========================================
-   INDIVIDUAL SKILL
-   ========================================= */
-
-.path-skill {
-  display: flex;
-
-  flex-direction: column;
+.creative-btn {
+  display: inline-flex;
 
   align-items: center;
 
-  gap: 9px;
+  gap: 10px;
 
-  cursor: default;
+  padding: 11px 17px;
 
-  transition: 0.35s ease;
-}
+  text-decoration: none;
 
-
-.path-icon {
-  width: 58px;
-  height: 58px;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 14px;
-
-  background:
-    rgba(15, 23, 42, 0.85);
-
-  border: 1px solid rgba(56, 189, 248, 0.16);
-
-  color: #38bdf8;
-
-  font-size: 1.55rem;
-
-  transition: 0.35s ease;
-}
-
-
-.c-icon {
-  font-size: 1.6rem;
-
-  font-weight: 900;
-}
-
-
-.path-skill span {
-  color: #64748b;
-
-  font-size: 0.58rem;
-
-  font-weight: 600;
-
-  white-space: nowrap;
-
-  transition: 0.3s ease;
-}
-
-
-/* =========================================
-   HOVER
-   ========================================= */
-
-.path-skill:hover {
-  transform: translateY(-7px);
-}
-
-
-.path-skill:hover .path-icon {
-  color: #7dd3fc;
-
-  border-color: #38bdf8;
-
-  box-shadow:
-    0 0 25px rgba(56, 189, 248, 0.18);
-
-  transform: scale(1.08);
-}
-
-
-.path-skill:hover span {
-  color: #e0f2fe;
-
-  text-shadow:
-    0 0 8px rgba(56, 189, 248, 0.4);
-}
-
-
-/* =========================================
-   TIMELINE GLOW POINTS
-   ========================================= */
-
-.skill-stage::after {
-  content: "";
-
-  position: absolute;
-
-  left: 50%;
-  top: 50%;
-
-  width: 7px;
-  height: 7px;
-
-  transform: translate(-50%, -50%);
-
-  border-radius: 50%;
+  color: #0f172a;
 
   background: #38bdf8;
 
-  box-shadow:
-    0 0 14px rgba(56, 189, 248, 0.8);
+  border-radius: 25px;
 
-  opacity: 0;
+  font-size: 0.7rem;
+
+  font-weight: 700;
 
   transition: 0.3s ease;
-
-  z-index: 6;
 }
 
+.creative-btn:hover {
+  transform: translateY(-3px);
 
-.skill-stage:hover::after {
-  opacity: 1;
+  box-shadow:
+    0 8px 25px rgba(56, 189, 248, 0.2);
 }
 
+.creative-btn i {
+  font-size: 0.65rem;
+}
 
-.skill-stage:hover .stage-title h3 {
+.resume-link {
+  color: #94a3b8;
+
+  text-decoration: none;
+
+  font-size: 0.7rem;
+
+  border-bottom: 1px solid #475569;
+
+  padding-bottom: 3px;
+
+  transition: 0.3s ease;
+}
+
+.resume-link:hover {
   color: #38bdf8;
 
-  text-shadow:
-    0 0 10px rgba(56, 189, 248, 0.35);
+  border-color: #38bdf8;
 }
 
 
-/* =========================================
+/* =========================
+   STATUS
+========================= */
+
+.hero-status {
+  position: absolute;
+
+  right: 9%;
+
+  bottom: 45px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: #64748b;
+
+  font-size: 0.6rem;
+
+  letter-spacing: 1px;
+}
+
+.hero-status span {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+
+  box-shadow:
+    0 0 10px rgba(34, 197, 94, 0.6);
+}
+
+
+/* =========================
+   DECORATIVE LINE
+========================= */
+
+.hero-line {
+  position: absolute;
+
+  left: 50%;
+
+  top: 15%;
+
+  width: 1px;
+
+  height: 70%;
+
+  background: linear-gradient(
+    transparent,
+    rgba(56, 189, 248, 0.25),
+    transparent
+  );
+}
+
+
+/* =========================
    MOBILE
-   ========================================= */
+========================= */
 
 @media (max-width: 768px) {
 
-  .skill-path {
-    padding: 10px 10px 20px;
+  .creative-hero {
+    min-height: 85vh;
+
+    padding: 50px 5%;
+
+    gap: 25px;
   }
 
-
-  /* Timeline moves to left */
-
-  .skill-path::before {
-    left: 25px;
-
-    transform: none;
+  .hero-main {
+    width: 48%;
   }
 
+  .hero-word {
+    font-size: clamp(2.7rem, 10vw, 4rem);
 
-  .skill-stage {
-    min-height: auto;
-
-    margin-bottom: 35px;
-
-    display: block;
-
-    padding-left: 55px;
+    letter-spacing: -2px;
   }
 
+  .hero-word span {
+    width: 22px;
 
-  /* Marker */
+    font-size: 0.45rem;
 
-  .stage-marker {
-    position: absolute;
-
-    left: 2px;
-    top: 20px;
-
-    width: 46px;
-    height: 46px;
-
-    margin: 0;
+    margin-top: 6px;
   }
 
-
-  .stage-marker span {
-    display: none;
+  .break-word {
+    transform: translateX(15px);
   }
 
-
-  /* No alternating layout */
-
-  .skill-stage:nth-child(odd) .stage-title,
-  .skill-stage:nth-child(even) .stage-title {
-
-    display: block;
-
-    width: 100%;
-
-    padding: 15px 18px;
-
-    text-align: left;
-
-    border-left: 1px solid rgba(56, 189, 248, 0.18);
-
-    border-right: none;
-
-    background:
-      linear-gradient(
-        90deg,
-        rgba(56, 189, 248, 0.05),
-        transparent
-      );
+  .solve-word {
+    transform: translateX(30px);
   }
 
-
-  .stage-title h3 {
-    font-size: 0.78rem;
+  .hero-info {
+    width: 48%;
   }
 
+  .hero-photo {
+    width: 145px;
+    height: 190px;
 
-  .stage-title small {
+    margin-bottom: 18px;
+  }
+
+  .hero-name span {
+    font-size: 0.5rem;
+
+    letter-spacing: 2px;
+  }
+
+  .hero-name h1 {
+    font-size: 1.05rem;
+
+    margin: 5px 0 10px;
+  }
+
+  .hero-description {
+    font-size: 0.65rem;
+
+    line-height: 1.5;
+
+    margin-bottom: 13px;
+  }
+
+  .hero-tech {
+    gap: 4px;
+
+    margin-bottom: 15px;
+  }
+
+  .hero-tech span {
+    padding: 4px 6px;
+
+    font-size: 0.45rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 8px;
+  }
+
+  .creative-btn {
+    padding: 8px 11px;
+
+    font-size: 0.55rem;
+  }
+
+  .resume-link {
+    font-size: 0.55rem;
+  }
+
+  .hero-status {
+    right: 5%;
+
+    bottom: 20px;
+
     font-size: 0.48rem;
   }
 
+  .hero-line {
+    left: 50%;
 
-  /* Skills below title */
+    top: 12%;
 
-  .skill-stage:nth-child(odd) .stage-skills,
-  .skill-stage:nth-child(even) .stage-skills {
+    height: 76%;
+  }
+}
 
-    display: flex;
 
-    width: 100%;
+/* =========================
+   SMALL PHONES
+========================= */
 
-    padding: 18px 5px 5px;
+@media (max-width: 430px) {
 
-    justify-content: flex-start;
-
-    flex-wrap: wrap;
+  .creative-hero {
+    padding: 40px 4%;
 
     gap: 15px;
   }
 
-
-  .path-icon {
-    width: 52px;
-    height: 52px;
-
-    font-size: 1.35rem;
+  .hero-word {
+    font-size: 2.45rem;
   }
 
-
-  .path-skill span {
-    font-size: 0.52rem;
+  .hero-photo {
+    width: 125px;
+    height: 165px;
   }
 
-
-  .skill-stage::after {
-    left: 25px;
-    top: 20px;
+  .hero-info {
+    width: 49%;
   }
 
+  .hero-description {
+    font-size: 0.58rem;
+  }
+
+  .hero-status {
+    bottom: 12px;
+  }
+}/* =========================
+   HERO ALIGNMENT FIX
+========================= */
+
+.creative-hero {
+  padding-left: 7%;
+  padding-right: 7%;
+  gap: 120px;
 }
 
 
-/* =========================================
-   SMALL PHONES
-   ========================================= */
+/* LEFT SIDE */
 
-@media (max-width: 420px) {
+.hero-main {
+  width: 52%;
+  flex-shrink: 0;
+}
 
-  .skill-stage {
-    padding-left: 48px;
+.hero-word {
+  font-size: clamp(3.8rem, 6.5vw, 6.5rem);
+}
+
+.break-word {
+  transform: translateX(45px);
+}
+
+.solve-word {
+  transform: translateX(90px);
+}
+
+
+/* RIGHT SIDE */
+
+.hero-info {
+  width: 330px;
+  flex-shrink: 0;
+}
+
+
+/* Make photo + information compact */
+
+.hero-photo {
+  width: 190px;
+  height: 235px;
+}
+
+.hero-description {
+  max-width: 300px;
+}
+
+
+/* =========================
+   TABLET / MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .creative-hero {
+    padding: 45px 5%;
+    gap: 18px;
   }
 
-
-  .skill-path::before {
-    left: 21px;
+  .hero-main {
+    width: 45%;
   }
 
-
-  .stage-marker {
-    left: 0;
-
-    width: 42px;
-    height: 42px;
+  .hero-info {
+    width: 50%;
   }
 
-
-  .skill-stage::after {
-    left: 21px;
+  .hero-word {
+    font-size: 2.8rem;
   }
 
+  .break-word {
+    transform: translateX(12px);
+  }
 
-  .stage-skills {
+  .solve-word {
+    transform: translateX(25px);
+  }
+
+  .hero-photo {
+    width: 130px;
+    height: 175px;
+  }
+}
+
+
+/* =========================
+   SMALL PHONE
+========================= */
+
+@media (max-width: 430px) {
+
+  .creative-hero {
     gap: 12px;
+    padding-left: 4%;
+    padding-right: 4%;
   }
 
-
-  .path-icon {
-    width: 48px;
-    height: 48px;
-
-    font-size: 1.2rem;
+  .hero-main {
+    width: 44%;
   }
 
-
-  .path-skill span {
-    font-size: 0.48rem;
+  .hero-info {
+    width: 52%;
   }
 
+  .hero-word {
+    font-size: 2.25rem;
+    letter-spacing: -1.5px;
+  }
+
+  .hero-word span {
+    width: 18px;
+    font-size: 0.4rem;
+  }
+
+  .break-word {
+    transform: translateX(8px);
+  }
+
+  .solve-word {
+    transform: translateX(16px);
+  }
+
+  .hero-photo {
+    width: 115px;
+    height: 155px;
+  }
+
+  .hero-name h1 {
+    font-size: 0.95rem;
+  }
+
+  .hero-description {
+    font-size: 0.55rem;
+  }
 }

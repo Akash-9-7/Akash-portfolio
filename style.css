@@ -1048,154 +1048,182 @@ section > h2 {
 
 }
 /* =========================================
-   DEVELOPER COMMAND CENTER
+   VERTICAL SKILL PATH
    ========================================= */
 
-.command-center {
+.skill-path {
   position: relative;
 
   width: 100%;
-  max-width: 1100px;
-  min-height: 620px;
+  max-width: 900px;
 
-  margin: 45px auto 0;
+  margin: 50px auto 0;
 
-  padding: 50px;
-
-  overflow: hidden;
-
-  border: 1px solid rgba(56, 189, 248, 0.12);
-  border-radius: 24px;
-
-  background:
-    radial-gradient(
-      circle at center,
-      rgba(56, 189, 248, 0.07),
-      transparent 35%
-    ),
-    rgba(15, 23, 42, 0.35);
-}
-
-
-/* GRID */
-
-.command-center::before {
-  content: "";
-
-  position: absolute;
-  inset: 0;
-
-  background-image:
-    linear-gradient(
-      rgba(56, 189, 248, 0.025) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      90deg,
-      rgba(56, 189, 248, 0.025) 1px,
-      transparent 1px
-    );
-
-  background-size: 32px 32px;
-
-  pointer-events: none;
+  padding: 10px 0 30px;
 }
 
 
 /* =========================================
-   CENTER CORE
+   MAIN TIMELINE
    ========================================= */
 
-.command-core {
+.skill-path::before {
+  content: "";
+
   position: absolute;
 
   left: 50%;
-  top: 48%;
+  top: 0;
+  bottom: 0;
 
-  transform: translate(-50%, -50%);
+  width: 2px;
 
-  width: 180px;
-  height: 180px;
+  transform: translateX(-50%);
+
+  background:
+    linear-gradient(
+      to bottom,
+      transparent,
+      rgba(56, 189, 248, 0.35) 8%,
+      rgba(56, 189, 248, 0.35) 92%,
+      transparent
+    );
+
+  box-shadow:
+    0 0 12px rgba(56, 189, 248, 0.15);
+}
+
+
+/* =========================================
+   SKILL STAGE
+   ========================================= */
+
+.skill-stage {
+  position: relative;
+
+  min-height: 190px;
+
+  margin-bottom: 45px;
+
+  display: grid;
+
+  grid-template-columns: 1fr 70px 1fr;
+
+  align-items: center;
+}
+
+
+/* =========================================
+   NUMBER MARKER
+   ========================================= */
+
+.stage-marker {
+  grid-column: 2;
+
+  grid-row: 1;
+
+  width: 48px;
+  height: 48px;
+
+  margin: auto;
 
   display: flex;
-  flex-direction: column;
 
   align-items: center;
   justify-content: center;
 
   border-radius: 50%;
 
-  background:
-    radial-gradient(
-      circle,
-      rgba(30, 41, 59, 0.98),
-      rgba(8, 15, 30, 0.98)
-    );
+  background: #0f172a;
 
-  border: 1px solid rgba(56, 189, 248, 0.45);
+  border: 1px solid rgba(56, 189, 248, 0.5);
 
   box-shadow:
-    0 0 35px rgba(56, 189, 248, 0.12),
-    inset 0 0 30px rgba(56, 189, 248, 0.05);
+    0 0 20px rgba(56, 189, 248, 0.12);
 
-  z-index: 10;
+  z-index: 5;
 }
 
 
-/* CORE RING */
-
-.core-ring {
-  position: absolute;
-
-  inset: -12px;
-
-  border: 1px dashed rgba(56, 189, 248, 0.25);
-
-  border-radius: 50%;
-
-  animation: coreRotate 15s linear infinite;
-}
-
-
-.core-ring::after {
+.stage-marker::before {
   content: "";
 
   position: absolute;
 
-  width: 8px;
-  height: 8px;
-
-  top: 15px;
-  left: 50%;
+  width: 9px;
+  height: 9px;
 
   border-radius: 50%;
 
   background: #38bdf8;
 
   box-shadow:
-    0 0 15px #38bdf8;
+    0 0 14px rgba(56, 189, 248, 0.8);
 }
 
 
-/* CORE TEXT */
-
-.core-name {
-  color: #38bdf8;
-
-  font-size: 1.4rem;
-  font-weight: 900;
-
-  letter-spacing: 4px;
-
-  text-shadow:
-    0 0 15px rgba(56, 189, 248, 0.7);
-}
-
-
-.command-core small {
-  margin-top: 6px;
+.stage-marker span {
+  position: relative;
 
   color: #64748b;
+
+  font-size: 0.55rem;
+
+  font-weight: 700;
+
+  transform: translateY(22px);
+}
+
+
+/* =========================================
+   STAGE TITLE
+   ========================================= */
+
+.stage-title {
+  grid-row: 1;
+
+  padding: 22px;
+
+  border-left: 1px solid rgba(56, 189, 248, 0.18);
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(56, 189, 248, 0.045),
+      transparent
+    );
+}
+
+
+/* Alternate sides */
+
+.skill-stage:nth-child(odd) .stage-title {
+  grid-column: 1;
+
+  text-align: right;
+
+  border-left: none;
+
+  border-right: 1px solid rgba(56, 189, 248, 0.18);
+
+  background:
+    linear-gradient(
+      270deg,
+      rgba(56, 189, 248, 0.045),
+      transparent
+    );
+}
+
+
+.skill-stage:nth-child(even) .stage-title {
+  grid-column: 3;
+
+  text-align: left;
+}
+
+
+.stage-title small {
+  color: #475569;
 
   font-size: 0.55rem;
 
@@ -1203,168 +1231,76 @@ section > h2 {
 }
 
 
-.core-status {
-  margin-top: 15px;
-
-  display: flex;
-  align-items: center;
-
-  gap: 6px;
-
-  color: #475569;
-
-  font-size: 0.48rem;
-
-  letter-spacing: 1px;
-}
-
-
-.core-status span {
-  width: 5px;
-  height: 5px;
-
-  border-radius: 50%;
-
-  background: #38bdf8;
-
-  box-shadow:
-    0 0 8px #38bdf8;
-}
-
-
-/* =========================================
-   TECH ZONES
-   ========================================= */
-
-.tech-zone {
-  position: absolute;
-
-  width: 300px;
-
-  padding: 20px;
-
-  border-left: 1px solid rgba(56, 189, 248, 0.2);
-
-  background:
-    linear-gradient(
-      90deg,
-      rgba(56, 189, 248, 0.035),
-      transparent
-    );
-
-  z-index: 5;
-
-  transition: 0.35s ease;
-}
-
-
-.tech-zone:hover {
-  border-left-color: rgba(56, 189, 248, 0.5);
-
-  background:
-    linear-gradient(
-      90deg,
-      rgba(56, 189, 248, 0.07),
-      transparent
-    );
-}
-
-
-/* POSITIONS */
-
-.programming-zone {
-  left: 45px;
-  top: 65px;
-}
-
-
-.web-zone {
-  right: 45px;
-  top: 65px;
-}
-
-
-.tools-zone {
-  left: 50%;
-  bottom: 55px;
-
-  transform: translateX(-50%);
-
-  width: 380px;
-}
-
-
-/* =========================================
-   ZONE HEADING
-   ========================================= */
-
-.zone-heading {
-  display: flex;
-
-  align-items: center;
-
-  gap: 12px;
-
-  margin-bottom: 20px;
-}
-
-
-.zone-number {
-  color: rgba(56, 189, 248, 0.5);
-
-  font-family: monospace;
-
-  font-size: 0.65rem;
-}
-
-
-.zone-heading small {
-  color: #475569;
-
-  font-size: 0.5rem;
-
-  letter-spacing: 2px;
-}
-
-
-.zone-heading h3 {
-  margin: 3px 0 0;
+.stage-title h3 {
+  margin: 6px 0 0;
 
   color: #94a3b8;
 
-  font-size: 0.75rem;
+  font-size: 0.9rem;
 
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
+
+  transition: 0.3s ease;
 }
 
 
 /* =========================================
-   TECH ITEMS
+   SKILLS AREA
    ========================================= */
 
-.tech-items {
+.stage-skills {
+  grid-row: 1;
+
   display: flex;
 
   align-items: center;
 
-  gap: 25px;
+  gap: 18px;
+
+  padding: 20px;
 }
 
 
-.tech-item {
+/* Odd → right side */
+
+.skill-stage:nth-child(odd) .stage-skills {
+  grid-column: 3;
+
+  justify-content: flex-start;
+}
+
+
+/* Even → left side */
+
+.skill-stage:nth-child(even) .stage-skills {
+  grid-column: 1;
+
+  justify-content: flex-end;
+
+  grid-row: 1;
+}
+
+
+/* =========================================
+   INDIVIDUAL SKILL
+   ========================================= */
+
+.path-skill {
   display: flex;
 
   flex-direction: column;
 
   align-items: center;
 
-  gap: 8px;
+  gap: 9px;
 
-  cursor: pointer;
+  cursor: default;
+
+  transition: 0.35s ease;
 }
 
 
-.tech-icon {
+.path-icon {
   width: 58px;
   height: 58px;
 
@@ -1373,10 +1309,10 @@ section > h2 {
   align-items: center;
   justify-content: center;
 
-  border-radius: 12px;
+  border-radius: 14px;
 
   background:
-    rgba(15, 23, 42, 0.8);
+    rgba(15, 23, 42, 0.85);
 
   border: 1px solid rgba(56, 189, 248, 0.16);
 
@@ -1389,16 +1325,18 @@ section > h2 {
 
 
 .c-icon {
-  font-size: 1.7rem;
+  font-size: 1.6rem;
 
   font-weight: 900;
 }
 
 
-.tech-item span {
+.path-skill span {
   color: #64748b;
 
   font-size: 0.58rem;
+
+  font-weight: 600;
 
   white-space: nowrap;
 
@@ -1406,144 +1344,77 @@ section > h2 {
 }
 
 
-/* HOVER */
+/* =========================================
+   HOVER
+   ========================================= */
 
-.tech-item:hover .tech-icon {
-  transform:
-    translateY(-7px)
-    scale(1.08);
+.path-skill:hover {
+  transform: translateY(-7px);
+}
 
+
+.path-skill:hover .path-icon {
   color: #7dd3fc;
 
   border-color: #38bdf8;
 
   box-shadow:
-    0 0 25px rgba(56, 189, 248, 0.15);
+    0 0 25px rgba(56, 189, 248, 0.18);
+
+  transform: scale(1.08);
 }
 
 
-.tech-item:hover span {
+.path-skill:hover span {
   color: #e0f2fe;
+
+  text-shadow:
+    0 0 8px rgba(56, 189, 248, 0.4);
 }
 
 
 /* =========================================
-   CONNECTING LINES
+   TIMELINE GLOW POINTS
    ========================================= */
 
-.command-line {
-  position: absolute;
+.skill-stage::after {
+  content: "";
 
-  height: 1px;
-
-  background:
-    linear-gradient(
-      90deg,
-      transparent,
-      rgba(56, 189, 248, 0.3),
-      transparent
-    );
-
-  z-index: 2;
-}
-
-
-.line-left {
-  width: 190px;
-
-  left: 330px;
-  top: 235px;
-}
-
-
-.line-right {
-  width: 190px;
-
-  right: 330px;
-  top: 235px;
-}
-
-
-.line-bottom {
-  width: 2px;
-  height: 80px;
-
-  left: 50%;
-  bottom: 225px;
-
-  background:
-    linear-gradient(
-      transparent,
-      rgba(56, 189, 248, 0.3),
-      transparent
-    );
-}
-
-
-/* =========================================
-   BOTTOM STATUS
-   ========================================= */
-
-.stack-status {
   position: absolute;
 
   left: 50%;
-  bottom: 18px;
+  top: 50%;
 
-  transform: translateX(-50%);
+  width: 7px;
+  height: 7px;
 
-  display: flex;
-
-  align-items: center;
-
-  gap: 9px;
-
-  color: #475569;
-
-  font-size: 0.52rem;
-
-  letter-spacing: 1.5px;
-
-  white-space: nowrap;
-}
-
-
-.status-light {
-  width: 6px;
-  height: 6px;
+  transform: translate(-50%, -50%);
 
   border-radius: 50%;
 
   background: #38bdf8;
 
   box-shadow:
-    0 0 10px rgba(56, 189, 248, 0.8);
+    0 0 14px rgba(56, 189, 248, 0.8);
+
+  opacity: 0;
+
+  transition: 0.3s ease;
+
+  z-index: 6;
 }
 
 
-.status-count {
-  padding-left: 8px;
-
-  border-left: 1px solid rgba(148, 163, 184, 0.15);
-
-  color: #64748b;
+.skill-stage:hover::after {
+  opacity: 1;
 }
 
 
-/* =========================================
-   ANIMATION
-   ========================================= */
+.skill-stage:hover .stage-title h3 {
+  color: #38bdf8;
 
-@keyframes coreRotate {
-
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-
+  text-shadow:
+    0 0 10px rgba(56, 189, 248, 0.35);
 }
 
 
@@ -1553,118 +1424,171 @@ section > h2 {
 
 @media (max-width: 768px) {
 
-  .command-center {
-    min-height: 850px;
-
-    padding: 25px 15px;
+  .skill-path {
+    padding: 10px 10px 20px;
   }
 
 
-  .command-core {
-    top: 50%;
+  /* Timeline moves to left */
 
-    width: 140px;
-    height: 140px;
+  .skill-path::before {
+    left: 25px;
+
+    transform: none;
   }
 
 
-  .core-name {
-    font-size: 1.1rem;
+  .skill-stage {
+    min-height: auto;
+
+    margin-bottom: 35px;
+
+    display: block;
+
+    padding-left: 55px;
   }
 
 
-  .tech-zone {
-    width: 43%;
+  /* Marker */
 
-    padding: 12px;
+  .stage-marker {
+    position: absolute;
+
+    left: 2px;
+    top: 20px;
+
+    width: 46px;
+    height: 46px;
+
+    margin: 0;
   }
 
 
-  .programming-zone {
-    left: 15px;
-    top: 45px;
-  }
-
-
-  .web-zone {
-    right: 15px;
-    top: 45px;
-  }
-
-
-  .tools-zone {
-    width: 90%;
-
-    bottom: 55px;
-  }
-
-
-  .zone-heading {
-    gap: 7px;
-
-    margin-bottom: 13px;
-  }
-
-
-  .zone-heading h3 {
-    font-size: 0.58rem;
-  }
-
-
-  .zone-heading small {
-    font-size: 0.4rem;
-  }
-
-
-  .tech-items {
-    gap: 10px;
-  }
-
-
-  .tech-icon {
-    width: 43px;
-    height: 43px;
-
-    font-size: 1.15rem;
-  }
-
-
-  .tech-item span {
-    font-size: 0.47rem;
-  }
-
-
-  .command-line {
+  .stage-marker span {
     display: none;
+  }
+
+
+  /* No alternating layout */
+
+  .skill-stage:nth-child(odd) .stage-title,
+  .skill-stage:nth-child(even) .stage-title {
+
+    display: block;
+
+    width: 100%;
+
+    padding: 15px 18px;
+
+    text-align: left;
+
+    border-left: 1px solid rgba(56, 189, 248, 0.18);
+
+    border-right: none;
+
+    background:
+      linear-gradient(
+        90deg,
+        rgba(56, 189, 248, 0.05),
+        transparent
+      );
+  }
+
+
+  .stage-title h3 {
+    font-size: 0.78rem;
+  }
+
+
+  .stage-title small {
+    font-size: 0.48rem;
+  }
+
+
+  /* Skills below title */
+
+  .skill-stage:nth-child(odd) .stage-skills,
+  .skill-stage:nth-child(even) .stage-skills {
+
+    display: flex;
+
+    width: 100%;
+
+    padding: 18px 5px 5px;
+
+    justify-content: flex-start;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+  }
+
+
+  .path-icon {
+    width: 52px;
+    height: 52px;
+
+    font-size: 1.35rem;
+  }
+
+
+  .path-skill span {
+    font-size: 0.52rem;
+  }
+
+
+  .skill-stage::after {
+    left: 25px;
+    top: 20px;
   }
 
 }
 
 
 /* =========================================
-   SMALL MOBILE
+   SMALL PHONES
    ========================================= */
 
-@media (max-width: 450px) {
+@media (max-width: 420px) {
 
-  .command-center {
-    min-height: 900px;
+  .skill-stage {
+    padding-left: 48px;
   }
 
 
-  .programming-zone,
-  .web-zone {
-    width: 46%;
+  .skill-path::before {
+    left: 21px;
   }
 
 
-  .tech-items {
-    flex-wrap: wrap;
+  .stage-marker {
+    left: 0;
+
+    width: 42px;
+    height: 42px;
   }
 
 
-  .tools-zone {
-    width: 92%;
+  .skill-stage::after {
+    left: 21px;
+  }
+
+
+  .stage-skills {
+    gap: 12px;
+  }
+
+
+  .path-icon {
+    width: 48px;
+    height: 48px;
+
+    font-size: 1.2rem;
+  }
+
+
+  .path-skill span {
+    font-size: 0.48rem;
   }
 
 }

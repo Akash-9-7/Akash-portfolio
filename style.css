@@ -341,173 +341,69 @@ section > h2 {
   cursor: pointer;
 }
 
-/* ================= PROJECT / INDUSTRY VIEW ================= */
-
 .project {
   padding: 0;
   overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  min-height: 150px;
 }
 
 .project-view {
   min-height: 150px;
-
   display: flex;
-  flex-direction: column;
-
   justify-content: center;
   align-items: center;
-
   text-align: center;
-
   padding: 2rem;
-
   position: relative;
-
-  transition: all 0.3s ease;
 }
 
 .project-view h3 {
   color: #60a5fa;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   margin: 0;
+  transition: 0.3s ease;
+}
+
+.project-view::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+  transition: 0.3s ease;
 }
 
 .project-view span {
-  margin-top: 15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
-  padding: 8px 20px;
-
+  padding: 8px 22px;
   border: 1px solid #38bdf8;
   border-radius: 25px;
 
   color: #38bdf8;
-
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 700;
-
   letter-spacing: 2px;
 
   opacity: 0;
-
-  transform: translateY(10px);
-
-  transition: all 0.3s ease;
+  transition: 0.3s ease;
+  z-index: 2;
 }
 
-.project:hover .project-view {
-  background: rgba(15, 23, 42, 0.25);
+.project:hover .project-view::before {
+  background: rgba(15, 23, 42, 0.65);
 }
 
 .project:hover .project-view span {
   opacity: 1;
-  transform: translateY(0);
 }
 
-.view-image {
-  position: relative;
-
-  width: 100%;
-
-  height: 240px;
-
-  overflow: hidden;
-
-  border-radius: 14px 14px 0 0;
-}
-
-
-.view-image img {
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-
-  display: block;
-
-  transition:
-    transform 0.4s ease,
-    filter 0.4s ease;
-}
-
-
-/* VIEW overlay */
-
-.view-overlay {
-  position: absolute;
-
-  top: 0;
-  left: 0;
-
-  width: 100%;
-  height: 100%;
-
-  background: rgba(15, 23, 42, 0.68);
-
-  display: flex;
-
-  justify-content: center;
-  align-items: center;
-
-  opacity: 0;
-
-  transition: opacity 0.3s ease;
-}
-
-
-.view-overlay span {
-  color: white;
-
-  font-size: 1.2rem;
-
-  font-weight: 700;
-
-  letter-spacing: 3px;
-
-  border: 1px solid #38bdf8;
-
-  padding: 10px 22px;
-
-  border-radius: 25px;
-
-  background: rgba(15, 23, 42, 0.45);
-
-  transform: translateY(10px);
-
-  transition: transform 0.3s ease;
-}
-
-
-.project:hover .view-overlay {
-  opacity: 1;
-}
-
-
-.project:hover .view-overlay span {
-  transform: translateY(0);
-}
-
-
-.project:hover .view-image img {
-  transform: scale(1.05);
-}
-
-
-.project-content {
-  padding: 1.5rem;
-}
-
-
-.project h3 {
-  font-size: 1.5rem;
-
-  margin-bottom: 0.5rem;
-
-  color: #60a5fa;
-}
-
-
-.project p {
-  color: #cbd5e1;
+.project:hover .project-view h3 {
+  opacity: 0.25;
 }
 
 

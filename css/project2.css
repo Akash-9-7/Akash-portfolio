@@ -1,0 +1,1357 @@
+/* =========================================================
+   PROJECT 2 — MAIN STYLESHEET
+   ========================================================= */
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+
+/* =========================================================
+   BASE
+   ========================================================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #0f172a;
+  color: #e2e8f0;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.project-header {
+  height: 75px;
+  padding: 0 7%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  background: rgba(15, 23, 42, 0.9);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px);
+}
+
+.back-btn {
+  color: #94a3b8;
+  font-size: 0.8rem;
+  transition: 0.3s ease;
+}
+
+.back-btn i {
+  margin-right: 8px;
+}
+
+.back-btn:hover {
+  color: #38bdf8;
+}
+
+.project-number {
+  color: #38bdf8;
+  font-size: 0.65rem;
+  letter-spacing: 3px;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.project-hero {
+  max-width: 1200px;
+  min-height: 85vh;
+  margin: auto;
+  padding: 100px 7%;
+
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 80px;
+}
+
+.eyebrow {
+  color: #38bdf8;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.hero-content h1 {
+  margin: 20px 0;
+
+  font-size: clamp(2.7rem, 5vw, 5rem);
+  line-height: 1.05;
+  letter-spacing: -2px;
+}
+
+.hero-content h1 span {
+  color: #38bdf8;
+}
+
+.hero-content p {
+  max-width: 600px;
+  margin-bottom: 30px;
+
+  color: #94a3b8;
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   HERO BUTTONS
+   ========================================================= */
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.primary-btn,
+.secondary-btn {
+  padding: 11px 18px;
+  border-radius: 25px;
+
+  font-size: 0.7rem;
+  font-weight: 700;
+
+  transition: 0.3s ease;
+}
+
+.primary-btn {
+  background: #38bdf8;
+  color: #0f172a;
+}
+
+.secondary-btn {
+  color: #94a3b8;
+  border: 1px solid rgba(96, 165, 250, 0.3);
+}
+
+.primary-btn:hover,
+.secondary-btn:hover {
+  transform: translateY(-3px);
+}
+
+.primary-btn i {
+  margin-left: 8px;
+}
+
+
+/* =========================================================
+   HERO IMAGE
+   ========================================================= */
+
+.hero-image {
+  position: relative;
+}
+
+.image-frame {
+  padding: 10px;
+
+  border: 1px solid rgba(56, 189, 248, 0.5);
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: 0 0 50px rgba(56, 189, 248, 0.08);
+
+  transform: rotate(2deg);
+}
+
+.image-frame img {
+  width: 100%;
+  height: 450px;
+  display: block;
+
+  object-fit: cover;
+}
+
+.image-label {
+  position: absolute;
+  right: -20px;
+  bottom: 20px;
+
+  padding: 7px 12px;
+
+  background: #0f172a;
+  border: 1px solid rgba(56, 189, 248, 0.4);
+
+  color: #38bdf8;
+  font-size: 0.55rem;
+  letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   COMMON CONTENT
+   ========================================================= */
+
+.content-section {
+  max-width: 1050px;
+  margin: auto;
+  padding: 90px 7%;
+}
+
+.section-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.section-heading span {
+  color: #38bdf8;
+  font-size: 0.65rem;
+  letter-spacing: 2px;
+}
+
+.section-heading h2 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   OVERVIEW
+   ========================================================= */
+
+.overview-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr;
+  gap: 50px;
+}
+
+.overview-text p {
+  margin-bottom: 20px;
+  color: #94a3b8;
+}
+
+.overview-highlight {
+  padding: 30px;
+
+  border-left: 2px solid #38bdf8;
+  background: rgba(56, 189, 248, 0.04);
+}
+
+.overview-highlight span {
+  color: #38bdf8;
+  font-size: 0.6rem;
+  letter-spacing: 2px;
+}
+
+.overview-highlight h3 {
+  margin-top: 15px;
+
+  font-size: 1.4rem;
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   PROBLEM
+   ========================================================= */
+
+.problem-box {
+  padding: 40px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.problem-box p {
+  color: #cbd5e1;
+  font-size: 1rem;
+}
+
+
+/* =========================================================
+   SOLUTION
+   ========================================================= */
+
+.solution-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 50px;
+}
+
+.solution-main h3 {
+  margin-bottom: 20px;
+
+  font-size: 2rem;
+  line-height: 1.3;
+}
+
+.solution-main p {
+  color: #94a3b8;
+}
+
+.solution-points {
+  padding-left: 30px;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.solution-points div {
+  display: flex;
+  gap: 20px;
+  padding: 18px 0;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.solution-points strong {
+  color: #38bdf8;
+  font-size: 0.7rem;
+}
+
+.solution-points span {
+  color: #cbd5e1;
+  font-size: 0.8rem;
+}
+
+
+/* =========================================================
+   FLOW
+   ========================================================= */
+
+.flow {
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+}
+
+.flow-item {
+  flex: 1;
+  padding: 25px;
+
+  border: 1px solid rgba(96, 165, 250, 0.12);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.flow-item > span {
+  color: #38bdf8;
+  font-size: 0.6rem;
+  letter-spacing: 2px;
+}
+
+.flow-item h3 {
+  margin: 12px 0 8px;
+  font-size: 1rem;
+}
+
+.flow-item p {
+  color: #64748b;
+  font-size: 0.7rem;
+  line-height: 1.6;
+}
+
+.flow-line {
+  width: 20px;
+  height: 1px;
+  align-self: center;
+
+  background: rgba(56, 189, 248, 0.3);
+}
+
+
+/* =========================================================
+   FEATURES
+   ========================================================= */
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.feature-card {
+  padding: 30px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.03);
+
+  transition: 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+
+  border-color: rgba(56, 189, 248, 0.4);
+  box-shadow: 0 15px 35px rgba(56, 189, 248, 0.08);
+}
+
+.feature-card i {
+  margin-bottom: 18px;
+
+  color: #38bdf8;
+  font-size: 1.5rem;
+}
+
+.feature-card h3 {
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.feature-card p {
+  color: #64748b;
+  font-size: 0.75rem;
+}
+
+
+/* =========================================================
+   TECHNOLOGY LIST
+   ========================================================= */
+
+.tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tech-list span {
+  padding: 9px 15px;
+
+  border: 1px solid rgba(96, 165, 250, 0.2);
+  border-radius: 20px;
+
+  color: #94a3b8;
+  font-size: 0.7rem;
+  background: rgba(15, 23, 42, 0.6);
+}
+
+
+/* =========================================================
+   SYSTEM ARCHITECTURE
+   ========================================================= */
+
+.architecture-box {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 18px;
+
+  border: 1px solid rgba(96, 165, 250, 0.12);
+  border-radius: 15px;
+  background: rgba(15, 23, 42, 0.45);
+
+  overflow: hidden;
+}
+
+.architecture-placeholder {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.architecture-placeholder i {
+  display: none;
+}
+
+.architecture-placeholder img {
+  width: 100%;
+  max-height: 520px;
+  height: auto;
+
+  display: block;
+
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+
+/* =========================================================
+   APPLICATION
+   ========================================================= */
+
+.application-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+
+  padding: 35px;
+
+  border: 1px solid rgba(56, 189, 248, 0.15);
+  border-radius: 20px;
+  background: rgba(56, 189, 248, 0.03);
+}
+
+.application-box > div:first-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.application-box > div:first-child > span {
+  color: #38bdf8;
+  font-size: 0.6rem;
+  letter-spacing: 2px;
+}
+
+.application-box h3 {
+  margin: 15px 0;
+
+  font-size: 1.6rem;
+  line-height: 1.3;
+}
+
+.application-box p {
+  color: #94a3b8;
+  font-size: 0.8rem;
+}
+
+.application-tags {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.application-tags span {
+  padding: 9px 15px;
+
+  border: 1px solid rgba(96, 165, 250, 0.2);
+  border-radius: 20px;
+
+  color: #94a3b8;
+  font-size: 0.7rem;
+  background: rgba(15, 23, 42, 0.6);
+}
+
+
+/* =========================================================
+   PROJECT GALLERY
+   ========================================================= */
+
+.gallery {
+  max-width: 1050px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.gallery-main {
+  width: fit-content;
+  min-height: 0;
+  height: auto;
+
+  margin: 0 auto;
+  padding: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(96, 165, 250, 0.18);
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.35);
+
+  transition: 0.3s ease;
+}
+
+.gallery-main img {
+  width: auto;
+  max-width: 100%;
+  max-height: 300px;
+  height: auto;
+
+  display: block;
+
+  object-fit: contain;
+  border-radius: 8px;
+
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.gallery-main:hover {
+  transform: translateY(-3px);
+
+  border-color: rgba(56, 189, 248, 0.35);
+  background: rgba(30, 41, 59, 0.55);
+}
+
+.gallery-main:hover img {
+  transform: scale(1.02);
+}
+
+
+/* =========================================================
+   APP / REMOTE MONITORING
+   ========================================================= */
+
+.app-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+
+  padding: 35px;
+
+  border: 1px solid rgba(56, 189, 248, 0.15);
+  border-radius: 20px;
+  background: rgba(56, 189, 248, 0.03);
+}
+
+.app-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.app-text > span {
+  color: #38bdf8;
+  font-size: 0.6rem;
+  letter-spacing: 2px;
+}
+
+.app-text h3 {
+  margin: 15px 0;
+
+  font-size: 1.8rem;
+  line-height: 1.3;
+}
+
+.app-text p {
+  color: #94a3b8;
+  font-size: 0.8rem;
+}
+
+
+/* =========================================================
+   MONITORING INTERFACE IMAGE
+   ========================================================= */
+
+.app-placeholder {
+  min-height: 0;
+  height: auto;
+  padding: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(96, 165, 250, 0.18);
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.35);
+}
+
+.app-placeholder i,
+.app-placeholder p {
+  display: none;
+}
+
+.app-placeholder img {
+  width: auto;
+  max-width: 100%;
+  max-height: 420px;
+  height: auto;
+
+  display: block;
+
+  object-fit: contain;
+  border-radius: 8px;
+
+  cursor: zoom-in;
+}
+
+
+/* =========================================================
+   RESOURCES
+   ========================================================= */
+
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.resource-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  padding: 20px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+
+  color: #e2e8f0;
+
+  transition: 0.3s ease;
+}
+
+.resource-card > i:first-child {
+  color: #38bdf8;
+  font-size: 1.3rem;
+}
+
+.resource-card div {
+  flex: 1;
+}
+
+.resource-card strong {
+  display: block;
+  font-size: 0.8rem;
+}
+
+.resource-card span {
+  color: #64748b;
+  font-size: 0.6rem;
+}
+
+.resource-card > i:last-child {
+  color: #475569;
+  font-size: 0.7rem;
+}
+
+.resource-card:hover {
+  transform: translateY(-4px);
+
+  border-color: rgba(56, 189, 248, 0.4);
+  color: #38bdf8;
+}
+
+
+/* =========================================================
+   TECHNOLOGY CARDS
+   ========================================================= */
+
+.tech-grid {
+  max-width: 750px;
+  margin: 35px auto 0;
+
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 15px;
+}
+
+.tech-card {
+  height: 100px;
+  padding: 10px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  border: 1px solid rgba(96, 165, 250, 0.12);
+  border-radius: 15px;
+
+  background: rgba(15, 23, 42, 0.45);
+
+  text-align: center;
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.tech-card img {
+  width: 32px;
+  height: 32px;
+  margin: 0;
+
+  object-fit: contain;
+  transition: 0.3s ease;
+}
+
+.tech-card h3 {
+  margin: 0;
+
+  color: #94a3b8;
+  font-size: 0.7rem;
+  font-weight: 500;
+
+  transition: 0.3s ease;
+}
+
+.tech-card:hover {
+  transform: translateY(-5px);
+
+  border-color: rgba(56, 189, 248, 0.45);
+  background: rgba(30, 41, 59, 0.7);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.tech-card:hover img {
+  transform: scale(1.15);
+}
+
+.tech-card:hover h3 {
+  color: #e2e8f0;
+}
+
+
+/* =========================================================
+   PROJECT NAVIGATION
+   ========================================================= */
+
+.project-navigation {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 30px 7% 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.project-nav-link {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.project-nav-link.next {
+  margin-left: auto;
+  text-align: right;
+}
+
+.project-nav-label {
+  color: #64748b;
+  font-size: 0.65rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.project-nav-title {
+  color: #94a3b8;
+  font-size: 0.8rem;
+  transition: 0.3s ease;
+}
+
+.project-nav-link:hover .project-nav-title {
+  color: #38bdf8;
+  transform: translateX(3px);
+}
+
+.project-nav-link.next:hover .project-nav-title {
+  transform: translateX(-3px);
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+  padding: 50px 7%;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+  text-align: center;
+}
+
+footer p {
+  margin-bottom: 15px;
+
+  color: #64748b;
+  font-size: 0.7rem;
+}
+
+footer p span {
+  color: #38bdf8;
+}
+
+footer a {
+  color: #94a3b8;
+  font-size: 0.7rem;
+}
+
+footer a:hover {
+  color: #38bdf8;
+}
+
+
+/* =========================================================
+   IMAGE LIGHTBOX
+   ========================================================= */
+
+.image-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px;
+
+  background: rgba(2, 6, 23, 0.92);
+  backdrop-filter: blur(10px);
+
+  cursor: zoom-out;
+}
+
+.image-lightbox.active {
+  display: flex;
+}
+
+.image-lightbox img {
+  width: auto;
+  height: auto;
+  max-width: 92vw;
+  max-height: 88vh;
+
+  object-fit: contain;
+
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+
+  cursor: default;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 22px;
+  right: 30px;
+
+  width: 42px;
+  height: 42px;
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+
+  background: rgba(15, 23, 42, 0.8);
+  color: #e2e8f0;
+
+  font-size: 1.8rem;
+  line-height: 1;
+
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.lightbox-close:hover {
+  color: #38bdf8;
+  border-color: rgba(56, 189, 248, 0.5);
+  transform: rotate(90deg);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .tech-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .tech-card {
+    height: 90px;
+  }
+
+  .tech-card img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  /* ---------- HEADER ---------- */
+
+  .project-header {
+    padding: 0 5%;
+  }
+
+
+  /* ---------- HERO ---------- */
+
+  .project-hero {
+    padding: 70px 5%;
+
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    align-items: center;
+    gap: 12px;
+
+    text-align: left;
+  }
+
+  .project-hero .hero-content {
+    width: 100%;
+  }
+
+  .project-hero .hero-image {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .project-hero .image-frame {
+    width: 100%;
+    padding: 5px;
+  }
+
+  .project-hero .hero-image img {
+    width: 100%;
+    max-width: 180px;
+    height: auto;
+
+    display: block;
+    object-fit: contain;
+  }
+
+  .project-hero .image-label {
+    margin-top: 6px;
+
+    font-size: 0.55rem;
+    text-align: center;
+  }
+
+  .project-hero h1 {
+    font-size: 1.45rem;
+    line-height: 1.15;
+  }
+
+  .project-hero p {
+    font-size: 0.75rem;
+    line-height: 1.45;
+  }
+
+  .project-hero .eyebrow {
+    font-size: 0.55rem;
+  }
+
+  .project-hero .hero-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .project-hero .hero-buttons a {
+    padding: 7px 10px;
+    font-size: 0.65rem;
+  }
+
+
+  /* ---------- CONTENT ---------- */
+
+  .content-section {
+    padding: 65px 5%;
+  }
+
+
+  /* ---------- GRIDS ---------- */
+
+  .overview-grid,
+  .solution-grid,
+  .application-box,
+  .app-box {
+    grid-template-columns: 1fr;
+  }
+
+
+  /* ---------- FLOW ---------- */
+
+  .flow {
+    flex-direction: column;
+  }
+
+  .flow-line {
+    width: 1px;
+    height: 20px;
+    align-self: center;
+  }
+
+
+  /* ---------- FEATURES ---------- */
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  /* ---------- GALLERY ---------- */
+
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .gallery-main {
+    width: 100%;
+    padding: 6px;
+  }
+
+  .gallery-main img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+  }
+
+
+  /* ---------- ARCHITECTURE ---------- */
+
+  .architecture-box {
+    padding: 10px;
+  }
+
+  .architecture-placeholder img {
+    max-height: 400px;
+  }
+
+
+  /* ---------- MONITORING ---------- */
+
+  .app-placeholder {
+    padding: 6px;
+  }
+
+  .app-placeholder img {
+    max-height: 350px;
+  }
+
+
+  /* ---------- RESOURCES ---------- */
+
+  .resource-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  /* ---------- APPLICATION ---------- */
+
+  .application-tags {
+    justify-content: flex-start;
+  }
+
+
+  /* ---------- TECHNOLOGY ---------- */
+
+  .tech-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .tech-card {
+    height: 82px;
+    gap: 7px;
+    border-radius: 12px;
+  }
+
+  .tech-card img {
+    width: 27px;
+    height: 27px;
+  }
+
+  .tech-card h3 {
+    font-size: 0.6rem;
+  }
+
+
+  /* ---------- LIGHTBOX ---------- */
+
+  .image-lightbox {
+    padding: 15px;
+  }
+
+  .image-lightbox img {
+    max-width: 96vw;
+    max-height: 82vh;
+    border-radius: 10px;
+  }
+
+  .lightbox-close {
+    top: 15px;
+    right: 15px;
+
+    width: 38px;
+    height: 38px;
+
+    font-size: 1.5rem;
+  }
+
+
+  /* ---------- PROJECT NAVIGATION ---------- */
+
+  .project-navigation {
+    padding: 20px 7% 55px;
+    gap: 15px;
+  }
+
+  .project-nav-label {
+    font-size: 0.55rem;
+    letter-spacing: 1.5px;
+  }
+
+  .project-nav-title {
+    font-size: 0.7rem;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 430px) {
+
+  .project-number {
+    font-size: 0.5rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2.1rem;
+  }
+
+  .section-heading h2 {
+    font-size: 1.5rem;
+  }
+
+  .solution-main h3 {
+    font-size: 1.5rem;
+  }
+
+  .application-box h3 {
+    font-size: 1.4rem;
+  }
+
+
+  /* ---------- ARCHITECTURE ---------- */
+
+  .architecture-box {
+    padding: 8px;
+  }
+
+  .architecture-placeholder img {
+    max-height: 300px;
+  }
+
+
+  /* ---------- GALLERY ---------- */
+
+  .gallery-main {
+    padding: 6px;
+    border-radius: 12px;
+  }
+
+  .gallery-main img {
+    border-radius: 8px;
+  }
+
+
+  /* ---------- MONITORING ---------- */
+
+  .app-placeholder img {
+    max-height: 280px;
+  }
+
+
+  /* ---------- TECHNOLOGY ---------- */
+
+  .tech-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .tech-card {
+    height: 78px;
+  }
+
+  .tech-card img {
+    width: 25px;
+    height: 25px;
+  }
+
+  .tech-card h3 {
+    font-size: 0.58rem;
+  }
+}
+/* ================= BACK TO TOP ================= */
+
+#backToTop {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  width: 45px;
+  height: 45px;
+  border: 1px solid rgba(56, 189, 248, 0.5);
+  border-radius: 50%;
+  background: rgba(15, 23, 42, 0.85);
+  color: #38bdf8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  transition: all 0.3s ease;
+  z-index: 9999;
+  backdrop-filter: blur(10px);
+}
+
+#backToTop.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+#backToTop:hover {
+  background: #38bdf8;
+  color: #0f172a;
+  transform: translateY(-4px);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.35);
+}
+
+@media (max-width: 600px) {
+  #backToTop {
+    right: 18px;
+    bottom: 18px;
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+}

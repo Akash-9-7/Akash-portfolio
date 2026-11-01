@@ -37,5 +37,5 @@ This project was built to solve specific user pain points through thoughtful UX 
 * `p1image1.jpeg` - `p1image7.jpeg`: Step-by-step visual documentation of the UI/UX workflow.
 
 ## 📬 Contact
-* **Portfolio / LinkedIn:** [Add your link here]
-* **Email:** [Add your email here]
+* **Portfolio / LinkedIn:** [https://akash-9-7.github.io/Akash-portfolio/  |   https://www.linkedin.com/in/akash-s-5a63712b5/]
+* **Email:** [akashsanmugam79@gmail.com]
